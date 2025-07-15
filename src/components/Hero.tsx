@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 lg:pt-24">
       {/* Background Image with Darker Overlay */}
       <div className="absolute inset-0">
         <img
@@ -140,12 +140,12 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-16 sm:w-24 h-16 sm:h-24 border border-[#F4D03F]/30 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-12 sm:w-16 h-12 sm:h-16 border border-[#EF9202]/20 rounded-full animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-5 w-6 sm:w-8 h-6 sm:h-8 border border-[#F4D03F]/20 rounded-full animate-pulse delay-500"></div>
+      {/* Decorative Elements - Reduced z-index to avoid interference */}
+      <div className="absolute top-20 left-10 w-16 sm:w-24 h-16 sm:h-24 border border-[#F4D03F]/30 rounded-full animate-pulse pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-12 sm:w-16 h-12 sm:h-16 border border-[#EF9202]/20 rounded-full animate-pulse delay-1000 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-5 w-6 sm:w-8 h-6 sm:h-8 border border-[#F4D03F]/20 rounded-full animate-pulse delay-500 pointer-events-none"></div>
       
-      {/* Floating particles effect */}
+      {/* Floating particles effect - Reduced z-index */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#96BE11] rounded-full animate-ping opacity-75"></div>
         <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-[#EF9202] rounded-full animate-ping opacity-75 delay-700"></div>

@@ -111,29 +111,28 @@ html, body {
   padding: 0;
   background-color: black;
   overflow-x: hidden;
-  position: relative;
 }
 
 body {
   line-height: 1.6;
 }
 
-/* Asegurar que los elementos del header tengan prioridad */
+/* Asegurar que los elementos del header tengan prioridad pero sin conflictos */
 header {
-  position: fixed !important;
-  z-index: 100 !important;
+  position: fixed;
+  z-index: 50;
 }
 
 header nav {
-  position: relative !important;
-  z-index: 102 !important;
+  position: relative;
+  z-index: 51;
 }
 
 header nav a {
-  position: relative !important;
-  z-index: 103 !important;
-  display: block !important;
-  pointer-events: auto !important;
+  position: relative;
+  z-index: 52;
+  display: block;
+  pointer-events: auto;
 }
 
 /* Asegurar que no haya espacios entre secciones */
@@ -160,18 +159,18 @@ section {
 
 /* Forzar visibilidad inicial para elementos críticos */
 .scroll-animate:not(.animate-in) {
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 1;
+  transform: none;
 }
 
 .card-animate:not(.animate-in) {
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 1;
+  transform: none;
 }
 
 .list-item-animate:not(.animate-in) {
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 1;
+  transform: none;
 }
 
 /* Animaciones más suaves */

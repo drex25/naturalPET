@@ -23,21 +23,32 @@ const Header: React.FC = () => {
   }, []);
 
   const handleNavClick = (href: string) => {
+    console.log('Nav item clicked:', href); // Debug log
     setIsMenuOpen(false);
-    document.getElementById(href.substring(1))?.scrollIntoView({ 
-      behavior: 'smooth' 
-    });
+    const element = document.getElementById(href.substring(1));
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    } else {
+      console.warn('Element not found:', href.substring(1));
+    }
+  };
+
+  const handleMenuToggle = () => {
+    console.log('Menu toggle clicked, current state:', isMenuOpen); // Debug log
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <>
       {/* Header que se vuelve fijo al hacer scroll */}
-      <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
           ? 'bg-black/95 backdrop-blur-xl shadow-2xl' 
           : 'bg-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[10000]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 lg:h-24">
             {/* Logo */}
             <div className="flex-shrink-0">
@@ -46,6 +57,7 @@ const Header: React.FC = () => {
                 className="block transition-all duration-300 hover:scale-110 hover:rotate-1"
                 onClick={(e) => {
                   e.preventDefault();
+                  console.log('Logo clicked'); // Debug log
                   document.getElementById('inicio')?.scrollIntoView({ 
                     behavior: 'smooth' 
                   });
@@ -60,7 +72,7 @@ const Header: React.FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 relative z-[10001]">
+            <nav className="hidden lg:flex items-center space-x-1">
               {navItems.map((item, index) => (
                 <a
                   key={item.name}
@@ -69,7 +81,7 @@ const Header: React.FC = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className="relative px-6 py-3 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-sm group overflow-hidden rounded-lg cursor-pointer block z-[10002]"
+                  className="relative px-6 py-3 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-sm group overflow-hidden rounded-lg cursor-pointer block"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <span className="relative z-10">{item.name}</span>
@@ -80,7 +92,7 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Tablet Navigation */}
-            <nav className="hidden md:flex lg:hidden items-center space-x-2 relative z-[10001]">
+            <nav className="hidden md:flex lg:hidden items-center space-x-2">
               {navItems.slice(0, 3).map((item, index) => (
                 <a
                   key={item.name}
@@ -89,7 +101,7 @@ const Header: React.FC = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className="relative px-4 py-2 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-xs group cursor-pointer block z-[10002]"
+                  className="relative px-4 py-2 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-xs group cursor-pointer block"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <span className="relative z-10">{item.name}</span>
@@ -97,8 +109,8 @@ const Header: React.FC = () => {
                 </a>
               ))}
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="ml-2 text-white hover:text-[#F4D03F] transition-colors duration-200 p-2 relative z-[10002]"
+                onClick={handleMenuToggle}
+                className="ml-2 text-white hover:text-[#F4D03F] transition-colors duration-200 p-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -107,9 +119,9 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Mobile menu button */}
-            <div className="md:hidden relative z-[10002]">
+            <div className="md:hidden">
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={handleMenuToggle}
                 className="text-white hover:text-[#F4D03F] transition-all duration-300 p-2 rounded-lg hover:bg-white/10"
               >
                 <div className="w-6 h-6 relative">
@@ -130,13 +142,16 @@ const Header: React.FC = () => {
       </header>
 
       {/* Mobile/Tablet Sidebar Menu */}
-      <div className={`fixed inset-0 z-[200] md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`fixed inset-0 z-40 md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
         {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-black/60 backdrop-blur-md transition-all duration-500 ${
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
-          onClick={() => setIsMenuOpen(false)}
+          onClick={() => {
+            console.log('Backdrop clicked'); // Debug log
+            setIsMenuOpen(false);
+          }}
         ></div>
         
         {/* Sidebar */}
@@ -152,7 +167,10 @@ const Header: React.FC = () => {
                 className="h-10 lg:h-12 w-auto drop-shadow-lg"
               />
               <button
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  console.log('Close button clicked'); // Debug log
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-300 hover:text-[#EF9202] transition-all duration-300 p-2 rounded-lg hover:bg-white/10"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
