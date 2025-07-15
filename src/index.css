@@ -120,19 +120,27 @@ body {
 /* Asegurar que los elementos del header tengan prioridad pero sin conflictos */
 header {
   position: fixed;
-  z-index: 50;
+  z-index: 99999 !important;
 }
 
 header nav {
   position: relative;
-  z-index: 51;
+  z-index: 100001 !important;
 }
 
 header nav a {
   position: relative;
-  z-index: 52;
+  z-index: 100002 !important;
   display: block;
   pointer-events: auto;
+}
+
+header nav button {
+  position: relative;
+  z-index: 100002 !important;
+  display: block !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
 
 /* Asegurar que no haya espacios entre secciones */
