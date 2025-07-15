@@ -4,22 +4,22 @@ import { MapPin, Clock, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 const Contact: React.FC = () => {
   const contactInfo = [
     {
-      icon: <MapPin className="h-6 w-6 text-green-400" />,
+      icon: <MapPin className="h-6 w-6 text-yellow-400" />,
       title: "Ubicación",
       details: ["Posadas, Misiones", "Argentina"]
     },
     {
-      icon: <Clock className="h-6 w-6 text-green-400" />,
+      icon: <Clock className="h-6 w-6 text-yellow-400" />,
       title: "Horarios",
       details: ["Lun - Vie: 9:00 - 18:00", "Sáb: 9:00 - 13:00"]
     },
     {
-      icon: <Phone className="h-6 w-6 text-green-400" />,
+      icon: <Phone className="h-6 w-6 text-yellow-400" />,
       title: "Teléfono",
       details: ["+54 3764 000000", "WhatsApp disponible"]
     },
     {
-      icon: <Mail className="h-6 w-6 text-green-400" />,
+      icon: <Mail className="h-6 w-6 text-yellow-400" />,
       title: "Email",
       details: ["info@naturalpet.com", "consultas@naturalpet.com"]
     }
@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            <span className="text-green-400">Contacto</span> y Ubicación
+            <span className="text-yellow-400">Contacto</span> y Ubicación
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Visitanos en nuestra tienda o contactanos para más información
@@ -62,13 +62,13 @@ const Contact: React.FC = () => {
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="p-3 bg-gray-900 rounded-lg hover:bg-green-400 hover:text-black transition-colors duration-200"
+                  className="p-3 bg-gray-900 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors duration-200"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a
                   href="#"
-                  className="p-3 bg-gray-900 rounded-lg hover:bg-green-400 hover:text-black transition-colors duration-200"
+                  className="p-3 bg-gray-900 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors duration-200"
                 >
                   <Facebook className="h-5 w-5" />
                 </a>
@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
           <div className="relative">
             <div className="bg-gray-900 rounded-2xl p-8 h-96 flex items-center justify-center">
               <div className="text-center space-y-4">
-                <MapPin className="h-16 w-16 text-green-400 mx-auto" />
+                <MapPin className="h-16 w-16 text-yellow-400 mx-auto" />
                 <h3 className="text-white font-semibold text-xl">Nuestra Ubicación</h3>
                 <p className="text-gray-400">
                   Posadas, Misiones<br />
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
                   href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-green-400 text-black font-semibold rounded-lg hover:bg-green-500 transition-colors duration-200"
+                  className="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-colors duration-200"
                 >
                   Ver en Google Maps
                 </a>

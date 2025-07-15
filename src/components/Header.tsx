@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Heart className="h-8 w-8 text-green-400" />
+            <Heart className="h-8 w-8 text-yellow-400" />
             <span className="text-xl font-bold text-white">Natural Pet</span>
           </div>
 
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-green-400 transition-colors duration-200 font-medium"
+                className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white hover:text-green-400 transition-colors"
+            className="md:hidden text-white hover:text-yellow-400 transition-colors"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-300 hover:text-green-400 transition-colors duration-200 font-medium"
+                  className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

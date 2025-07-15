@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Heart className="h-8 w-8 text-green-400" />
+              <Heart className="h-8 w-8 text-yellow-400" />
               <span className="text-xl font-bold text-white">Natural Pet</span>
             </div>
             <p className="text-gray-400">
@@ -19,13 +19,13 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -37,22 +37,22 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-semibold text-lg">Enlaces rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#inicio" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
+                <a href="#inicio" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#combos" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
+                <a href="#combos" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
                   Combos
                 </a>
               </li>
               <li>
-                <a href="#sobre-nosotros" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
+                <a href="#sobre-nosotros" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
                   Sobre nosotros
                 </a>
               </li>
               <li>
-                <a href="#guia" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
+                <a href="#guia" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
                   Guía práctica
                 </a>
               </li>
@@ -75,11 +75,11 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-semibold text-lg">Contacto</h3>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-green-400" />
+                <Phone className="h-4 w-4 text-yellow-400" />
                 <span className="text-gray-400">+54 3764 000000</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-green-400" />
+                <Mail className="h-4 w-4 text-yellow-400" />
                 <span className="text-gray-400">info@naturalpet.com</span>
               </div>
             </div>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
             © 2024 Natural Pet. Todos los derechos reservados. Hecho con 
-            <Heart className="inline h-4 w-4 text-green-400 mx-1" />
+            <Heart className="inline h-4 w-4 text-yellow-400 mx-1" />
             para mascotas en Posadas, Misiones.
           </p>
         </div>

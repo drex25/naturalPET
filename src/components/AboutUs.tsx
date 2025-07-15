@@ -4,22 +4,22 @@ import { Leaf, Award, Users, MapPin } from 'lucide-react';
 const AboutUs: React.FC = () => {
   const features = [
     {
-      icon: <Leaf className="h-8 w-8 text-green-400" />,
+      icon: <Leaf className="h-8 w-8 text-yellow-400" />,
       title: "100% Natural",
       description: "Productos seleccionados sin químicos ni conservantes artificiales"
     },
     {
-      icon: <Award className="h-8 w-8 text-green-400" />,
+      icon: <Award className="h-8 w-8 text-yellow-400" />,
       title: "Calidad Premium",
       description: "Estándares internacionales de nutrición animal"
     },
     {
-      icon: <Users className="h-8 w-8 text-green-400" />,
+      icon: <Users className="h-8 w-8 text-yellow-400" />,
       title: "Asesoramiento",
       description: "Expertos en nutrición animal te acompañan en el proceso"
     },
     {
-      icon: <MapPin className="h-8 w-8 text-green-400" />,
+      icon: <MapPin className="h-8 w-8 text-yellow-400" />,
       title: "Posadas, Misiones",
       description: "Primera tienda naturista para mascotas en la región"
     }
@@ -33,7 +33,7 @@ const AboutUs: React.FC = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl font-bold text-white">
-                Sobre <span className="text-green-400">Natural Pet</span>
+                Sobre <span className="text-yellow-400">Natural Pet</span>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed">
                 Somos la primera tienda naturista para mascotas en Posadas, Misiones. Creemos que la alimentación 
