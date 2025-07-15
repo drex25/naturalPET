@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-24 z-0">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
       {/* Background Image with Darker Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 lg:py-24 pointer-events-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 lg:py-24">
         <div className="max-w-5xl mx-auto">
           {/* Badge */}
           <div 

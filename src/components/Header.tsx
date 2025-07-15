@@ -32,7 +32,7 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Header que se vuelve fijo al hacer scroll */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 pointer-events-auto ${
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
           ? 'bg-black/95 backdrop-blur-xl shadow-2xl' 
           : 'bg-transparent'
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 pointer-events-auto">
+            <nav className="hidden lg:flex items-center space-x-1">
               {navItems.map((item, index) => (
                 <a
                   key={item.name}
@@ -69,18 +69,18 @@ const Header: React.FC = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className="relative px-6 py-3 text-white hover:text-[#EF9202] transition-all duration-300 font-medium text-sm group overflow-hidden rounded-lg cursor-pointer pointer-events-auto"
+                  className="relative px-6 py-3 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-sm group overflow-hidden rounded-lg cursor-pointer"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <span className="relative z-10 pointer-events-none">{item.name}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#96BE11]/20 to-[#EF9202]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg pointer-events-none"></div>
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#96BE11] to-[#EF9202] group-hover:w-full transition-all duration-300 pointer-events-none"></div>
+                  <span className="relative z-10">{item.name}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#F4D03F]/20 to-[#EF9202]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg"></div>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F4D03F] to-[#EF9202] group-hover:w-full transition-all duration-300"></div>
                 </a>
               ))}
             </nav>
 
             {/* Tablet Navigation */}
-            <nav className="hidden md:flex lg:hidden items-center space-x-2 pointer-events-auto">
+            <nav className="hidden md:flex lg:hidden items-center space-x-2">
               {navItems.slice(0, 3).map((item, index) => (
                 <a
                   key={item.name}
@@ -89,16 +89,16 @@ const Header: React.FC = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className="relative px-4 py-2 text-white hover:text-[#EF9202] transition-all duration-300 font-medium text-xs group cursor-pointer pointer-events-auto"
+                  className="relative px-4 py-2 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-xs group cursor-pointer"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <span className="relative z-10 pointer-events-none">{item.name}</span>
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#96BE11] to-[#EF9202] group-hover:w-full transition-all duration-300 pointer-events-none"></div>
+                  <span className="relative z-10">{item.name}</span>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F4D03F] to-[#EF9202] group-hover:w-full transition-all duration-300"></div>
                 </a>
               ))}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="ml-2 text-white hover:text-[#EF9202] transition-colors duration-200 p-2 pointer-events-auto"
+                className="ml-2 text-white hover:text-[#F4D03F] transition-colors duration-200 p-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -107,10 +107,10 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Mobile menu button */}
-            <div className="md:hidden pointer-events-auto">
+            <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white hover:text-[#EF9202] transition-all duration-300 p-2 rounded-lg hover:bg-white/10 pointer-events-auto"
+                className="text-white hover:text-[#F4D03F] transition-all duration-300 p-2 rounded-lg hover:bg-white/10"
               >
                 <div className="w-6 h-6 relative">
                   <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ease-out ${
