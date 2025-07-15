@@ -45,21 +45,21 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-24 z-0">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
       {/* Background Image with Darker Overlay */}
-      <div className="absolute inset-0 z-[-1]">
+      <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Natural Pet Hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60 z-[-1]"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         {/* Gradient overlay for extra depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[-1]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-[1] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 lg:py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 lg:py-24">
         <div className="max-w-5xl mx-auto">
           {/* Badge */}
           <div 
@@ -141,12 +141,12 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-16 sm:w-24 h-16 sm:h-24 border border-[#96BE11]/30 rounded-full animate-pulse z-[-1]"></div>
-      <div className="absolute bottom-20 right-10 w-12 sm:w-16 h-12 sm:h-16 border border-[#EF9202]/20 rounded-full animate-pulse delay-1000 z-[-1]"></div>
-      <div className="absolute top-1/2 left-5 w-6 sm:w-8 h-6 sm:h-8 border border-[#96BE11]/20 rounded-full animate-pulse delay-500 z-[-1]"></div>
+      <div className="absolute top-20 left-10 w-16 sm:w-24 h-16 sm:h-24 border border-[#F4D03F]/30 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-12 sm:w-16 h-12 sm:h-16 border border-[#EF9202]/20 rounded-full animate-pulse delay-1000"></div>
+      <div className="absolute top-1/2 left-5 w-6 sm:w-8 h-6 sm:h-8 border border-[#F4D03F]/20 rounded-full animate-pulse delay-500"></div>
       
       {/* Floating particles effect */}
-      <div className="absolute inset-0 pointer-events-none z-[-1]">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#96BE11] rounded-full animate-ping opacity-75"></div>
         <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-[#EF9202] rounded-full animate-ping opacity-75 delay-700"></div>
         <div className="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-[#96BE11] rounded-full animate-ping opacity-75 delay-1000"></div>
