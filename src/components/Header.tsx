@@ -32,12 +32,12 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Header que se vuelve fijo al hacer scroll */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         isScrolled 
           ? 'bg-black/95 backdrop-blur-xl shadow-2xl' 
           : 'bg-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[101]">
           <div className="flex justify-between items-center h-20 lg:h-24">
             {/* Logo */}
             <div className="flex-shrink-0">
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-1 relative z-[102]">
               {navItems.map((item, index) => (
                 <a
                   key={item.name}
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className="relative px-6 py-3 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-sm group overflow-hidden rounded-lg cursor-pointer"
+                  className="relative px-6 py-3 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-sm group overflow-hidden rounded-lg cursor-pointer block"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <span className="relative z-10">{item.name}</span>
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Tablet Navigation */}
-            <nav className="hidden md:flex lg:hidden items-center space-x-2">
+            <nav className="hidden md:flex lg:hidden items-center space-x-2 relative z-[102]">
               {navItems.slice(0, 3).map((item, index) => (
                 <a
                   key={item.name}
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
                     e.preventDefault();
                     handleNavClick(item.href);
                   }}
-                  className="relative px-4 py-2 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-xs group cursor-pointer"
+                  className="relative px-4 py-2 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-xs group cursor-pointer block"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <span className="relative z-10">{item.name}</span>
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
               ))}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="ml-2 text-white hover:text-[#F4D03F] transition-colors duration-200 p-2"
+                className="ml-2 text-white hover:text-[#F4D03F] transition-colors duration-200 p-2 relative z-[102]"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden relative z-[102]">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white hover:text-[#F4D03F] transition-all duration-300 p-2 rounded-lg hover:bg-white/10"
@@ -130,7 +130,7 @@ const Header: React.FC = () => {
       </header>
 
       {/* Mobile/Tablet Sidebar Menu */}
-      <div className={`fixed inset-0 z-50 md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`fixed inset-0 z-[200] md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
         {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-black/60 backdrop-blur-md transition-all duration-500 ${

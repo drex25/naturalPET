@@ -111,10 +111,29 @@ html, body {
   padding: 0;
   background-color: black;
   overflow-x: hidden;
+  position: relative;
 }
 
 body {
   line-height: 1.6;
+}
+
+/* Asegurar que los elementos del header tengan prioridad */
+header {
+  position: fixed !important;
+  z-index: 100 !important;
+}
+
+header nav {
+  position: relative !important;
+  z-index: 102 !important;
+}
+
+header nav a {
+  position: relative !important;
+  z-index: 103 !important;
+  display: block !important;
+  pointer-events: auto !important;
 }
 
 /* Asegurar que no haya espacios entre secciones */
