@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import WhyChooseUs from './components/WhyChooseUs';
 import Combos from './components/Combos';
+import Stats from './components/Stats';
 import Testimonials from './components/Testimonials';
 import Guide from './components/Guide';
 import Contact from './components/Contact';
@@ -34,6 +35,7 @@ function App() {
       <AboutUs />
       <WhyChooseUs />
       <Combos />
+      <Stats />
       <Testimonials />
       <Guide />
       <Contact />
