@@ -28,7 +28,7 @@ export const useAppStore = create<AppState>((set) => ({
   setActiveSection: (section) => set({ activeSection: section }),
   
   // WhatsApp Integration
-  whatsappNumber: '5493764123456',
+  whatsappNumber: '5493764518356',
   setWhatsappNumber: (number) => set({ whatsappNumber: number }),
   
   // Theme

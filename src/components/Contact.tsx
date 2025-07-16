@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
   }, [predefinedMessages.length]);
 
   const sendWhatsAppMessage = (message: string) => {
-    const whatsappUrl = `https://wa.me/5493764123456?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -258,7 +258,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-medium">Dirección</p>
-                    <p className="text-gray-400 text-sm">Av. Principal 123, Posadas</p>
+                    <p className="text-gray-400 text-sm">Av. 45 nro 6865 (colectora R12, pegado a Madre selva), Posadas, Misiones</p>
                   </div>
                 </div>
 
@@ -270,7 +270,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-medium">Horarios</p>
-                    <p className="text-gray-400 text-sm">Lun-Sáb: 9:00 - 18:00</p>
+                    <p className="text-gray-400 text-sm">Lun-Sáb: 7:30-12:30 / 15:30-19:30</p>
                   </div>
                 </div>
 
@@ -282,7 +282,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-medium">WhatsApp</p>
-                    <p className="text-gray-400 text-sm">+54 9 3764 123456</p>
+                    <p className="text-gray-400 text-sm">+54 9 376 451-8356</p>
                   </div>
                 </div>
               </div>

@@ -34,7 +34,7 @@ const WhatsAppButton: React.FC = () => {
 
   const handleClick = () => {
     const message = "Hola! Me gustaría obtener más información sobre los productos naturales para mi mascota. ¿Podrían ayudarme?";
-    const whatsappUrl = `https://wa.me/5493764123456?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

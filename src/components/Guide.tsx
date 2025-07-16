@@ -248,7 +248,7 @@ const Guide: React.FC = () => {
               <button
                 onClick={() => {
                   const message = "Hola! Me gustaría agendar una consulta gratuita para mi mascota. ¿Podrían ayudarme?";
-                  const whatsappUrl = `https://wa.me/5493764123456?text=${encodeURIComponent(message)}`;
+                  const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
                   window.open(whatsappUrl, '_blank');
                 }}
                 className="bg-gradient-to-r from-[#96BE11] to-[#96BE11]/90 hover:from-[#EF9202] hover:to-[#EF9202]/90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center animate-pulse-glow"
