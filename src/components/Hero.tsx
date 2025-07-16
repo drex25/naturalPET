@@ -1,17 +1,30 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import heroImage from '../assets/perro y gato foto.png';
+import portadaImage from '../assets/portada.png';
 
 const Hero: React.FC = () => {
+  const [currentImage, setCurrentImage] = useState(0);
   const badgeRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  const images = [
+    { src: heroImage, alt: "Perro y gato felices" },
+    { src: portadaImage, alt: "Soluciones nutricionales NaturalPET" }
+  ];
 
   useEffect(() => {
+    // Cambiar imagen cada 4 segundos
+    const imageInterval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 4000);
+
     // Función para activar animaciones
     const activateAnimations = () => {
-      const elements = [badgeRef.current, titleRef.current, subtitleRef.current, buttonsRef.current, statsRef.current];
+      const elements = [badgeRef.current, titleRef.current, subtitleRef.current, buttonsRef.current, statsRef.current, imageRef.current];
       elements.forEach((ref, index) => {
         if (ref) {
           setTimeout(() => {
@@ -36,26 +49,52 @@ const Hero: React.FC = () => {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const elements = [badgeRef.current, titleRef.current, subtitleRef.current, buttonsRef.current, statsRef.current];
+    const elements = [badgeRef.current, titleRef.current, subtitleRef.current, buttonsRef.current, statsRef.current, imageRef.current];
     elements.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      clearInterval(imageInterval);
+      observer.disconnect();
+    };
+  }, [images.length]);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 lg:pt-24">
-      {/* Background Image with Darker Overlay */}
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 lg:pt-24 overflow-hidden">
+      {/* Background Images with Crossfade */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Natural Pet Hero"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-        {/* Gradient overlay for extra depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImage ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/60"></div>
+            {/* Gradient overlay for extra depth */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Floating particles */}
+        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#96BE11] rounded-full animate-ping opacity-75"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-[#EF9202] rounded-full animate-ping opacity-75 delay-700"></div>
+        <div className="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-[#96BE11] rounded-full animate-ping opacity-75 delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-[#F4D03F] rounded-full animate-ping opacity-75 delay-500"></div>
+        
+        {/* Gradient circles */}
+        <div className="absolute top-20 left-10 w-16 sm:w-24 h-16 sm:h-24 border border-[#F4D03F]/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-12 sm:w-16 h-12 sm:h-16 border border-[#EF9202]/20 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-5 w-6 sm:w-8 h-6 sm:h-8 border border-[#F4D03F]/20 rounded-full animate-pulse delay-500"></div>
       </div>
 
       {/* Content */}
@@ -76,7 +115,7 @@ const Hero: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight font-serif scroll-animate"
           >
             ¡Nutrimos su{' '}
-            <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent">
+            <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
               naturaleza!
             </span>
           </h1>
@@ -96,7 +135,7 @@ const Hero: React.FC = () => {
           >
             <a
               href="#combos"
-              className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#96BE11] to-[#96BE11]/90 text-white font-semibold rounded-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#96BE11]/25 overflow-hidden text-sm sm:text-base"
+              className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#96BE11] to-[#96BE11]/90 text-white font-semibold rounded-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#96BE11]/25 overflow-hidden text-sm sm:text-base animate-pulse-glow"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#96BE11] to-[#EF9202] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <span className="relative z-10 flex items-center">
@@ -119,37 +158,47 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          {/* Stats */}
+          {/* Stats with enhanced animations */}
           <div 
             ref={statsRef}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto scroll-animate"
           >
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-serif">100%</div>
+            <div className="text-center group">
+              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-serif group-hover:scale-110 transition-transform duration-300">100%</div>
               <div className="text-gray-300 text-xs sm:text-sm tracking-wide">Natural</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#EF9202] mb-2 font-serif">+500</div>
+            <div className="text-center group">
+              <div className="text-2xl sm:text-3xl font-bold text-[#EF9202] mb-2 font-serif group-hover:scale-110 transition-transform duration-300">+500</div>
               <div className="text-gray-300 text-xs sm:text-sm tracking-wide">Mascotas Felices</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-serif">24/7</div>
+            <div className="text-center group">
+              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-serif group-hover:scale-110 transition-transform duration-300">24/7</div>
               <div className="text-gray-300 text-xs sm:text-sm tracking-wide">Asesoramiento</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative Elements - Reduced z-index to avoid interference */}
-      <div className="absolute top-20 left-10 w-16 sm:w-24 h-16 sm:h-24 border border-[#F4D03F]/30 rounded-full animate-pulse pointer-events-none"></div>
-      <div className="absolute bottom-20 right-10 w-12 sm:w-16 h-12 sm:h-16 border border-[#EF9202]/20 rounded-full animate-pulse delay-1000 pointer-events-none"></div>
-      <div className="absolute top-1/2 left-5 w-6 sm:w-8 h-6 sm:h-8 border border-[#F4D03F]/20 rounded-full animate-pulse delay-500 pointer-events-none"></div>
-      
-      {/* Floating particles effect - Reduced z-index */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#96BE11] rounded-full animate-ping opacity-75"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-[#EF9202] rounded-full animate-ping opacity-75 delay-700"></div>
-        <div className="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-[#96BE11] rounded-full animate-ping opacity-75 delay-1000"></div>
+      {/* Floating Image Section */}
+      <div 
+        ref={imageRef}
+        className="absolute bottom-8 right-8 hidden lg:block card-animate"
+      >
+        <div className="relative">
+          <div className="bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-2xl p-4 backdrop-blur-sm border border-[#96BE11]/30">
+            <img
+              src={portadaImage}
+              alt="NaturalPET Soluciones"
+              className="w-32 h-32 object-cover rounded-xl shadow-2xl"
+            />
+            <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[#96BE11] to-[#EF9202] text-white px-3 py-1 rounded-lg text-xs font-semibold shadow-lg">
+              ¡Natural!
+            </div>
+          </div>
+          {/* Decorative elements */}
+          <div className="absolute -top-2 -left-2 w-4 h-4 border border-[#96BE11]/50 rounded-full animate-pulse"></div>
+          <div className="absolute -bottom-2 -left-2 w-3 h-3 border border-[#EF9202]/50 rounded-full animate-pulse delay-500"></div>
+        </div>
       </div>
     </section>
   );

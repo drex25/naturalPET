@@ -47,9 +47,48 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(150, 190, 17, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(150, 190, 17, 0.6);
+  }
+}
+
 /* Clases de animación */
 .animate-fade-in {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .animate-fade-in-left {
@@ -62,6 +101,18 @@
 
 .animate-scale-in {
   animation: scaleIn 0.8s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 3s ease-in-out infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinReverse 2s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
 }
 
 /* Animaciones para elementos que aparecen en scroll */
@@ -211,4 +262,13 @@ section {
 
 .slide-in-bottom {
   animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+/* Efectos especiales para el loader */
+.loader-glow {
+  filter: drop-shadow(0 0 20px rgba(150, 190, 17, 0.5));
+}
+
+.loader-text-glow {
+  text-shadow: 0 0 10px rgba(150, 190, 17, 0.8);
 }
