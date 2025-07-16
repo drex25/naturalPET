@@ -9,11 +9,11 @@ const Combos: React.FC = () => {
     {
       id: 1,
       name: "Combo Inicial",
-      description: "Perfecto para comenzar la transición a una nutrición más saludable",
+      description: "Perfecto para comenzar la transición a una nutrición saludable",
       features: [
         "Alimentos naturales premium",
-        "Suplementos vitamínicos",
-        "Snacks saludables",
+        "Suplementos protéicos naturales",
+        "Snacks naturales saludables",
         "Guía práctica de alimentación",
         "Asesoramiento personalizado"
       ],
@@ -28,10 +28,12 @@ const Combos: React.FC = () => {
       description: "La solución más completa para el bienestar integral de tu mascota",
       features: [
         "Alimentos naturales premium",
-        "Suplementos vitamínicos",
-        "Snacks saludables",
+        "Suplementos protéicos naturales",
+        "Snacks naturales saludables",
         "Productos dentales",
-        "Higiene y prevención",
+        "Productos de higiene y prevención",
+        "Guía práctica de alimentación",
+        "Asesoramiento personalizado",
         "Seguimiento nutricional"
       ],
       popular: true,
@@ -44,12 +46,15 @@ const Combos: React.FC = () => {
       name: "Combo Familiar",
       description: "Ideal para hogares con múltiples mascotas",
       features: [
-        "Alimentos para 2 mascotas",
-        "Suplementos personalizados",
-        "Snacks variados",
-        "Guía completa",
+        "Alimentos naturales premium",
+        "Suplementos protéicos naturales",
+        "Snacks naturales saludables",
+        "Productos dentales",
+        "Productos de higiene y prevención",
+        "Guía práctica de alimentación",
+        "Asesoramiento personalizado",
+        "Seguimiento nutricional",
         "Descuento por volumen",
-        "Asesoramiento grupal"
       ],
       popular: false,
       color: "from-[#F4D03F] to-[#F4D03F]/90",
