@@ -10,24 +10,49 @@ import {
   Menu,
   Instagram,
   Youtube,
-  MessageCircle
+  MessageCircle,
+  Heart,
+  Star
 } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeNavItem, setActiveNavItem] = useState('inicio');
 
   const navItems = [
-    { name: 'Inicio', href: '#inicio', icon: Home },
-    { name: 'Combos', href: '#combos', icon: Package },
-    { name: 'Sobre Nosotros', href: '#sobre-nosotros', icon: Users },
-    { name: 'Guía Práctica', href: '#guia', icon: BookOpen },
-    { name: 'Contacto', href: '#contacto', icon: Phone }
+    { name: 'Inicio', href: '#inicio', icon: Home, color: 'from-[#96BE11] to-[#96BE11]/90' },
+    { name: 'Sobre Nosotros', href: '#sobre-nosotros', icon: Users, color: 'from-[#F4D03F] to-[#F4D03F]/90' },
+    { name: 'Combos', href: '#combos', icon: Package, color: 'from-[#EF9202] to-[#EF9202]/90' },
+    { name: 'Guía Práctica', href: '#guia', icon: BookOpen, color: 'from-[#96BE11] to-[#EF9202]' },
+    { name: 'Contacto', href: '#contacto', icon: Phone, color: 'from-[#EF9202] to-[#F4D03F]' }
+  ];
+
+  const mobileMenuItems = [
+    { name: 'Inicio', href: '#inicio', icon: Home, description: 'Volver al inicio' },
+    { name: 'Sobre Nosotros', href: '#sobre-nosotros', icon: Users, description: 'Conoce nuestro equipo' },
+    { name: 'Soluciones Nutricionales', href: '#combos', icon: Package, description: 'Nuestros combos naturales' },
+    { name: 'Guía Práctica', href: '#guia', icon: BookOpen, description: 'Aprende sobre nutrición' },
+    { name: 'Contacto', href: '#contacto', icon: Phone, description: 'Habla con nosotros' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
+      
+      // Detectar sección activa
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPos = window.scrollY + 100;
+
+      sections.forEach((section) => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        const sectionHeight = (section as HTMLElement).offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          setActiveNavItem(sectionId || 'inicio');
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -39,7 +64,6 @@ const Header: React.FC = () => {
     e.stopPropagation();
     setIsMenuOpen(false);
     
-    // Pequeño delay para asegurar que el menú se cierre primero
     setTimeout(() => {
       const element = document.getElementById(href.substring(1));
       if (element) {
@@ -74,9 +98,9 @@ const Header: React.FC = () => {
     <>
       {/* Header Principal */}
       <header 
-        className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 transition-all duration-700 ${
           isScrolled 
-            ? 'bg-black/95 backdrop-blur-xl shadow-2xl' 
+            ? 'bg-black/95 backdrop-blur-xl shadow-2xl border-b border-[#96BE11]/20' 
             : 'bg-transparent'
         }`}
         style={{ zIndex: 99999 }}
@@ -87,13 +111,16 @@ const Header: React.FC = () => {
             <div className="flex-shrink-0" style={{ zIndex: 100000 }}>
               <button
                 onClick={handleLogoClick}
-                className="block transition-all duration-300 hover:scale-110 hover:rotate-1 cursor-pointer"
+                className="block transition-all duration-500 hover:scale-110 hover:rotate-2 cursor-pointer group"
               >
-                <img 
-                  src={logo} 
-                  alt="Natural Pet" 
-                  className="h-12 lg:h-14 w-auto drop-shadow-lg"
-                />
+                <div className="relative">
+                  <img 
+                    src={logo} 
+                    alt="Natural Pet" 
+                    className="h-12 lg:h-14 w-auto drop-shadow-lg group-hover:drop-shadow-2xl transition-all duration-500"
+                  />
+                  <div className="absolute -inset-2 bg-gradient-to-r from-[#96BE11]/20 to-[#EF9202]/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
               </button>
             </div>
 
@@ -101,70 +128,52 @@ const Header: React.FC = () => {
             <nav className="hidden lg:flex items-center space-x-2" style={{ zIndex: 100001 }}>
               {navItems.map((item, index) => {
                 const IconComponent = item.icon;
+                const isActive = activeNavItem === item.href.substring(1);
+                
                 return (
                   <button
                     key={item.name}
                     onClick={(e) => handleNavClick(item.href, e)}
-                    className="relative px-6 py-3 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-sm group overflow-hidden rounded-lg cursor-pointer"
+                    className={`relative px-6 py-3 text-white transition-all duration-500 font-medium text-sm group overflow-hidden rounded-xl cursor-pointer ${
+                      isActive ? 'text-[#96BE11]' : 'hover:text-[#F4D03F]'
+                    }`}
                     style={{ 
-                      transitionDelay: `${index * 50}ms`,
+                      transitionDelay: `${index * 100}ms`,
                       zIndex: 100002 + index
                     }}
                   >
-                    <span className="relative z-10">{item.name}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#F4D03F]/20 to-[#EF9202]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg"></div>
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F4D03F] to-[#EF9202] group-hover:w-full transition-all duration-300"></div>
+                    <span className="relative z-10 flex items-center space-x-2">
+                      <IconComponent className="w-4 h-4" />
+                      <span>{item.name}</span>
+                    </span>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-20 transition-all duration-500 rounded-xl`}></div>
+                    <div className={`absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r ${item.color} group-hover:w-full transition-all duration-500 ${
+                      isActive ? 'w-full' : ''
+                    }`}></div>
                   </button>
                 );
               })}
-            </nav>
-
-            {/* Tablet Navigation */}
-            <nav className="hidden md:flex lg:hidden items-center space-x-2" style={{ zIndex: 100001 }}>
-              {navItems.slice(0, 3).map((item, index) => {
-                const IconComponent = item.icon;
-                return (
-                  <button
-                    key={item.name}
-                    onClick={(e) => handleNavClick(item.href, e)}
-                    className="relative px-4 py-2 text-white hover:text-[#F4D03F] transition-all duration-300 font-medium text-xs group cursor-pointer"
-                    style={{ 
-                      transitionDelay: `${index * 50}ms`,
-                      zIndex: 100002 + index
-                    }}
-                  >
-                    <span className="relative z-10">{item.name}</span>
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F4D03F] to-[#EF9202] group-hover:w-full transition-all duration-300"></div>
-                  </button>
-                );
-              })}
-              <button
-                onClick={handleMenuToggle}
-                className="ml-2 text-white hover:text-[#F4D03F] transition-colors duration-200 p-2 cursor-pointer"
-                style={{ zIndex: 100002 }}
-              >
-                <Menu className="w-5 h-5" />
-              </button>
             </nav>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center" style={{ zIndex: 100001 }}>
+            <div className="lg:hidden flex items-center" style={{ zIndex: 100001 }}>
               <button
                 onClick={handleMenuToggle}
-                className="text-white hover:text-[#F4D03F] transition-all duration-300 p-2 rounded-lg hover:bg-white/10 cursor-pointer flex items-center justify-center"
+                className="relative text-white hover:text-[#96BE11] transition-all duration-500 p-3 rounded-xl hover:bg-white/10 cursor-pointer flex items-center justify-center group"
                 style={{ zIndex: 100002 }}
               >
                 <div className="w-6 h-6 relative flex items-center justify-center">
-                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ease-out ${
+                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-500 ease-out ${
                     isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
                   }`}></span>
-                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ease-out ${
+                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-500 ease-out ${
                     isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
                   }`}></span>
-                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 ease-out ${
+                  <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-500 ease-out ${
                     isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
                   }`}></span>
                 </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#96BE11]/20 to-[#EF9202]/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </button>
             </div>
           </div>
@@ -173,54 +182,81 @@ const Header: React.FC = () => {
 
       {/* Mobile/Tablet Overlay Menu */}
       <div 
-        className={`fixed inset-0 transition-all duration-500 ${isMenuOpen ? 'visible' : 'invisible'}`}
+        className={`fixed inset-0 transition-all duration-700 ${isMenuOpen ? 'visible' : 'invisible'}`}
         style={{ zIndex: 99998 }}
       >
         {/* Backdrop */}
         <div 
-          className={`absolute inset-0 bg-black/90 backdrop-blur-xl transition-all duration-500 ${
+          className={`absolute inset-0 bg-black/95 backdrop-blur-2xl transition-all duration-700 ${
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
           onClick={() => setIsMenuOpen(false)}
         ></div>
         
         {/* Sidebar */}
-        <div className={`absolute right-0 top-0 h-full w-full sm:w-80 bg-gradient-to-br from-black/98 via-gray-900/98 to-black/98 backdrop-blur-2xl border-l border-[#F4D03F]/30 transform transition-all duration-500 ease-out ${
+        <div className={`absolute right-0 top-0 h-full w-full sm:w-96 bg-gradient-to-br from-black/98 via-gray-900/98 to-black/98 backdrop-blur-3xl border-l border-[#96BE11]/30 transform transition-all duration-700 ease-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="flex flex-col h-full">
-            {/* Header del menú - Solo logo */}
-            <div className="flex items-center justify-between p-6 border-b border-[#F4D03F]/20">
-              <div className="flex items-center">
-                <img 
-                  src={logo} 
-                  alt="Natural Pet" 
-                  className="h-12 w-auto drop-shadow-2xl"
-                />
+            {/* Header del menú */}
+            <div className="flex items-center justify-between p-6 border-b border-[#96BE11]/20">
+              <div className="flex items-center space-x-3">
+                <div className="relative group">
+                  <img 
+                    src={logo} 
+                    alt="Natural Pet" 
+                    className="h-12 w-auto drop-shadow-2xl group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute -inset-2 bg-gradient-to-r from-[#96BE11]/20 to-[#EF9202]/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="text-white">
+                  <h3 className="font-bold text-lg">Natural Pet</h3>
+                  <p className="text-gray-400 text-sm">Nutrición Natural</p>
+                </div>
               </div>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white hover:text-[#96BE11] transition-colors duration-300 p-2 rounded-lg hover:bg-white/10"
+              >
+                <X className="w-6 h-6" />
+              </button>
             </div>
 
             {/* Navigation Items */}
-            <nav className="flex-1 px-6 py-8">
-              <div className="space-y-3">
-                {navItems.map((item, index) => {
+            <nav className="flex-1 px-6 py-8 overflow-y-auto">
+              <div className="space-y-2">
+                {mobileMenuItems.map((item, index) => {
                   const IconComponent = item.icon;
+                  const isActive = activeNavItem === item.href.substring(1);
+                  
                   return (
                     <button
                       key={item.name}
                       onClick={(e) => handleNavClick(item.href, e)}
-                      className="w-full text-left text-lg font-medium text-gray-200 hover:text-white transition-all duration-300 transform hover:translate-x-2 group p-4 rounded-2xl hover:bg-gradient-to-r hover:from-[#F4D03F]/15 hover:to-[#EF9202]/10 cursor-pointer backdrop-blur-sm"
-                      style={{ transitionDelay: `${index * 80}ms` }}
+                      className={`w-full text-left transition-all duration-500 transform hover:translate-x-2 group p-4 rounded-2xl hover:bg-gradient-to-r hover:from-[#96BE11]/15 hover:to-[#EF9202]/10 cursor-pointer backdrop-blur-sm ${
+                        isActive ? 'bg-gradient-to-r from-[#96BE11]/20 to-[#EF9202]/10 border border-[#96BE11]/30' : ''
+                      }`}
+                      style={{ transitionDelay: `${index * 100}ms` }}
                     >
                       <div className="flex items-center space-x-4">
-                        <div className="w-8 h-8 bg-gradient-to-r from-[#F4D03F]/20 to-[#EF9202]/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                          <IconComponent className="w-4 h-4 text-[#F4D03F]" />
+                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r from-[#96BE11]/20 to-[#EF9202]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
+                          isActive ? 'bg-gradient-to-r from-[#96BE11]/30 to-[#EF9202]/30' : ''
+                        }`}>
+                          <IconComponent className="w-6 h-6 text-[#96BE11]" />
                         </div>
-                        <span className="relative flex-1">
-                          {item.name}
-                          <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F4D03F] to-[#EF9202] group-hover:w-full transition-all duration-300"></div>
-                        </span>
-                        <div className="w-2 h-2 bg-gradient-to-r from-[#F4D03F] to-[#EF9202] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+                        <div className="flex-1">
+                          <span className={`block text-lg font-medium transition-colors duration-300 ${
+                            isActive ? 'text-[#96BE11]' : 'text-gray-200 group-hover:text-white'
+                          }`}>
+                            {item.name}
+                          </span>
+                          <span className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                            {item.description}
+                          </span>
+                        </div>
+                        <div className={`w-3 h-3 bg-gradient-to-r from-[#96BE11] to-[#EF9202] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100 ${
+                          isActive ? 'opacity-100 scale-100' : ''
+                        }`}></div>
                       </div>
                     </button>
                   );
@@ -229,7 +265,7 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Footer del menú */}
-            <div className="p-6 border-t border-[#F4D03F]/20">
+            <div className="p-6 border-t border-[#96BE11]/20">
               <div className="text-center space-y-4">
                 <p className="text-gray-400 text-sm font-medium">¿Necesitas ayuda?</p>
                 <button
@@ -239,7 +275,7 @@ const Header: React.FC = () => {
                     window.open(whatsappUrl, '_blank');
                     setIsMenuOpen(false);
                   }}
-                  className="w-full bg-gradient-to-r from-[#F4D03F] to-[#EF9202] hover:from-[#EF9202] hover:to-[#F4D03F] text-black font-semibold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[#F4D03F]/25 flex items-center justify-center group cursor-pointer"
+                  className="w-full bg-gradient-to-r from-[#96BE11] to-[#EF9202] hover:from-[#EF9202] hover:to-[#96BE11] text-black font-semibold py-4 px-6 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-[#96BE11]/25 flex items-center justify-center group cursor-pointer"
                 >
                   <MessageCircle className="w-5 h-5 mr-3 group-hover:animate-bounce" />
                   Consultar por WhatsApp
@@ -251,7 +287,7 @@ const Header: React.FC = () => {
                     href="https://www.instagram.com/naturalpet.ar?igsh=MXhvdTVubWgzOTlmMQ=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-400 hover:text-[#F4D03F] hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110"
+                    className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
@@ -259,19 +295,17 @@ const Header: React.FC = () => {
                     href="https://youtube.com/@naturalpet?si=JwBk5DYggqpgxpaR"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-400 hover:text-[#EF9202] hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110"
+                    className="w-10 h-10 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                   >
                     <Youtube className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.tiktok.com/@natural.pet?_t=ZM-8y3051HXfsb&_r=1"
+                    href="https://wa.me/5493764123456"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-400 hover:text-[#F4D03F] hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110"
+                    className="w-10 h-10 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.2.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                    </svg>
+                    <MessageCircle className="w-5 h-5" />
                   </a>
                 </div>
               </div>
