@@ -96,15 +96,15 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* Header Principal */}
-      <header 
-        className={`fixed top-0 left-0 right-0 transition-all duration-700 ${
-          isScrolled 
-            ? 'bg-black/95 backdrop-blur-xl shadow-2xl border-b border-[#96BE11]/20' 
-            : 'bg-transparent'
-        }`}
-        style={{ zIndex: 99999 }}
-      >
+              {/* Header Principal */}
+        <header 
+          className={`fixed top-0 left-0 right-0 transition-all duration-700 ${
+            isScrolled 
+              ? 'bg-black/95 backdrop-blur-xl shadow-2xl border-b border-[#96BE11]/20' 
+              : 'bg-black/5 backdrop-blur-sm'
+          }`}
+          style={{ zIndex: 99999 }}
+        >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 lg:h-24">
             {/* Logo */}
@@ -200,7 +200,7 @@ const Header: React.FC = () => {
           <div className="flex flex-col h-full">
             {/* Header del menú */}
             <div className="flex items-center justify-between p-6 border-b border-[#96BE11]/20">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center">
                 <div className="relative group">
                   <img 
                     src={logo} 
@@ -208,10 +208,6 @@ const Header: React.FC = () => {
                     className="h-12 w-auto drop-shadow-2xl group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute -inset-2 bg-gradient-to-r from-[#96BE11]/20 to-[#EF9202]/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="text-white">
-                  <h3 className="font-bold text-lg">Natural Pet</h3>
-                  <p className="text-gray-400 text-sm">Nutrición Natural</p>
                 </div>
               </div>
               <button
