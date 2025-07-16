@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Heart, Shield, Users, Award, Clock, Star } from 'lucide-react';
+import perroGatoIcono from '../assets/perro y gato icono.png';
 
 const WhyChooseUs: React.FC = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -55,6 +56,15 @@ const WhyChooseUs: React.FC = () => {
       color: "from-indigo-500 to-purple-500",
       bgColor: "bg-indigo-500/20",
       borderColor: "border-indigo-500/30"
+    },
+    {
+      icon: null,
+      title: "Compañeros felices",
+      description: "Tu perro y gato merecen la mejor nutrición natural para una vida plena y saludable.",
+      color: "from-[#96BE11] to-[#EF9202]",
+      bgColor: "bg-[#96BE11]/20",
+      borderColor: "border-[#96BE11]/30",
+      customIcon: perroGatoIcono
     }
   ];
 
@@ -147,7 +157,15 @@ const WhyChooseUs: React.FC = () => {
                 }`}>
                   {/* Icon with gradient background */}
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <IconComponent className="w-8 h-8 text-white" />
+                    {feature.customIcon ? (
+                      <img 
+                        src={feature.customIcon} 
+                        alt="Icono personalizado" 
+                        className="w-8 h-8 object-contain"
+                      />
+                    ) : (
+                      IconComponent && <IconComponent className="w-8 h-8 text-white" />
+                    )}
                   </div>
 
                   {/* Content */}

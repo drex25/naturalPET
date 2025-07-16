@@ -115,7 +115,7 @@ const Hero: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight font-serif scroll-animate"
           >
             ¡Nutrimos su{' '}
-            <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
+            <span className="text-[#EF9202] animate-pulse-glow">
               naturaleza!
             </span>
           </h1>
