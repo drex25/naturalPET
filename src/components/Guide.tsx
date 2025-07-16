@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import fotoHeroImage from '../assets/foto-hero.jpg';
 
 const Guide: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -237,6 +238,21 @@ const Guide: React.FC = () => {
           className="text-center mt-16 scroll-animate"
         >
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
+            {/* Hero Image */}
+            <div className="relative mb-8">
+              <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={fotoHeroImage}
+                  alt="Mascotas felices y saludables"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-sm rounded-lg px-4 py-2">
+                  <span className="text-white text-sm font-medium">NaturalPET</span>
+                </div>
+              </div>
+            </div>
+            
             <h3 className="text-2xl font-bold text-white mb-4 font-serif">
               ¿Listo para comenzar?
             </h3>
