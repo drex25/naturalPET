@@ -121,7 +121,6 @@ const Contact: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Estamos aquí para ayudarte a darle a tu mascota la nutrición que se merece. 
-            ¡La primera consulta es gratuita!
           </p>
         </div>
 
