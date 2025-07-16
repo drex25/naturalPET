@@ -267,7 +267,7 @@ const Header: React.FC = () => {
                 <button
                   onClick={() => {
                     const message = "Hola! Me gustaría hacer una consulta sobre soluciones nutricionales para mi mascota. ¿Podrían ayudarme?";
-                    const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
+                    const whatsappUrl = `https://wa.me/5493764518346?text=${encodeURIComponent(message)}`;
                     window.open(whatsappUrl, '_blank');
                     setIsMenuOpen(false);
                   }}
@@ -296,7 +296,7 @@ const Header: React.FC = () => {
                     <Youtube className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://wa.me/5493764518356"
+                    href="https://wa.me/5493764518346"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"

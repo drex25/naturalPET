@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
   }, [predefinedMessages.length]);
 
   const sendWhatsAppMessage = (message: string) => {
-    const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5493764518346?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -282,7 +282,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-medium">WhatsApp</p>
-                    <p className="text-gray-400 text-sm">+54 9 376 451-8356</p>
+                    <p className="text-gray-400 text-sm">+54 9 376 451-8346</p>
                   </div>
                 </div>
               </div>

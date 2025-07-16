@@ -183,7 +183,7 @@ const Combos: React.FC = () => {
                 <button
                   onClick={() => {
                     const message = `Hola! Me interesa el ${combo.name} de Natural Pet. ¿Podrían darme más información sobre las soluciones nutricionales?`;
-                    const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
+                    const whatsappUrl = `https://wa.me/5493764518346?text=${encodeURIComponent(message)}`;
                     window.open(whatsappUrl, '_blank');
                   }}
                   className={`w-full bg-gradient-to-r ${combo.color} hover:from-[#EF9202] hover:to-[#EF9202]/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center group animate-pulse-glow`}
@@ -217,7 +217,7 @@ const Combos: React.FC = () => {
             <button
               onClick={() => {
                 const message = "Hola! Me gustaría consultar sobre un plan personalizado para potenciar la nutrición de mi mascota. ¿Podrían ayudarme?";
-                const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/5493764518346?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
               }}
               className="bg-gradient-to-r from-[#EF9202] to-[#EF9202]/90 hover:from-[#96BE11] hover:to-[#96BE11]/90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center animate-pulse-glow"

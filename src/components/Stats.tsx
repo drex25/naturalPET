@@ -188,7 +188,7 @@ const Stats: React.FC = () => {
             <button
               onClick={() => {
                 const message = "Hola! Vi las estadísticas de Natural Pet y me gustaría que mi mascota también sea parte de esos números. ¿Podrían ayudarme?";
-                const whatsappUrl = `https://wa.me/5493764518356?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/5493764518346?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
               }}
               className="bg-gradient-to-r from-[#96BE11] to-[#96BE11]/90 hover:from-[#EF9202] hover:to-[#EF9202]/90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center animate-pulse-glow"
