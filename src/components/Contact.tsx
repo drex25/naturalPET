@@ -114,9 +114,9 @@ const Contact: React.FC = () => {
           ref={headerRef}
           className="text-center mb-16 scroll-animate"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
-            ¡Conectemos por <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-              WhatsApp
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-bebas uppercase">
+            ¡CONECTEMOS POR <span className="text-[#96BE11]">
+              WHATSAPP
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -132,8 +132,8 @@ const Contact: React.FC = () => {
               ref={messagesRef}
               className="scroll-animate"
             >
-              <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                Mensajes Predefinidos
+              <h3 className="text-2xl font-bold text-white mb-8 text-center font-bebas uppercase">
+                MENSAJES PREDEFINIDOS
               </h3>
               <div className="space-y-4">
                 {predefinedMessages.map((msg, index) => (
@@ -182,8 +182,8 @@ const Contact: React.FC = () => {
               ref={featuresRef}
               className="scroll-animate"
             >
-              <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                ¿Por qué elegirnos?
+              <h3 className="text-2xl font-bold text-white mb-8 text-center font-bebas uppercase">
+                ¿POR QUÉ ELEGIRNOS?
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {features.map((feature, index) => (
@@ -222,8 +222,8 @@ const Contact: React.FC = () => {
             className="scroll-animate"
           >
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-[#96BE11]/20 shadow-2xl shadow-[#96BE11]/10">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                Nuestra Ubicación
+              <h3 className="text-2xl font-bold text-white mb-6 text-center font-bebas uppercase">
+                NUESTRA UBICACIÓN
               </h3>
               
               {/* Map Placeholder */}

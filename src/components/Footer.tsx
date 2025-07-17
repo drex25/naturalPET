@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-6 font-serif">Enlaces rápidos</h3>
+            <h3 className="text-white font-semibold text-lg mb-6 font-bebas uppercase">ENLACES RÁPIDOS</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={link.name}>
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-6 font-serif">Contacto</h3>
+            <h3 className="text-white font-semibold text-lg mb-6 font-bebas uppercase">CONTACTO</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3 group">
                 <div className="w-10 h-10 bg-[#96BE11]/20 rounded-lg flex items-center justify-center group-hover:bg-[#96BE11]/30 transition-all duration-300">
