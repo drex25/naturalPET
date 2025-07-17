@@ -115,9 +115,9 @@ const Combos: React.FC = () => {
           ref={headerRef}
           className="text-center mb-16 scroll-animate"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
-            Nuestras <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-              Soluciones Nutricionales
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-bebas uppercase">
+            NUESTRAS <span className="text-[#96BE11]">
+              SOLUCIONES NUTRICIONALES
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -176,7 +176,7 @@ const Combos: React.FC = () => {
                   </div>
 
                   <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2 font-serif group-hover:text-[#96BE11] transition-colors duration-300 min-h-[3rem] flex items-center justify-center">
+                    <h3 className="text-2xl font-bold text-white mb-2 font-bebas uppercase group-hover:text-[#96BE11] transition-colors duration-300 min-h-[3rem] flex items-center justify-center">
                       {combo.name}
                     </h3>
                     <p className="text-gray-400 mb-4 min-h-[3rem] flex items-center justify-center text-center">{combo.description}</p>
@@ -226,8 +226,8 @@ const Combos: React.FC = () => {
           className="text-center scroll-animate mt-16"
         >
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold text-white mb-4 font-serif">
-              ¿Por qué hablamos de potenciar el alimento balanceado?
+            <h3 className="text-2xl font-bold text-white mb-4 font-bebas uppercase">
+              ¿POR QUÉ HABLAMOS DE POTENCIAR EL ALIMENTO BALANCEADO?
             </h3>
             <p className="text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
               El concepto de completo y balanceado en los alimentos nunca es suficiente para una verdadera nutrición saludable. En la diversidad está la clave, al igual que la necesidad de humedad en los alimentos. Por eso, nuestras Soluciones Nutricionales están pensadas y conformadas por diversos productos, que con nuestro asesoramiento gratuito podrás aprender a alimentar de manera saludable y sostenible a tu mascota.

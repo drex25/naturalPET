@@ -58,9 +58,9 @@ const Grooming: React.FC = () => {
               </div>
 
               {/* Title */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-serif">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-bebas uppercase">
                 BAÑO ECOLÓGICO Y{' '}
-                <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
+                <span className="text-[#96BE11]">
                   PELUQUERÍA CANINA
                 </span>
               </h2>
@@ -192,7 +192,8 @@ const Grooming: React.FC = () => {
         <div className="mt-20 text-center">
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-white mb-4 font-serif">
-              Tu peludo merece el mejor cuidado
+            <h3 className="text-2xl font-bold text-white mb-4 font-bebas uppercase">
+              TU PELUDO MERECE EL MEJOR CUIDADO
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Agenda una cita y descubre la diferencia de un servicio profesional con productos 100% naturales.

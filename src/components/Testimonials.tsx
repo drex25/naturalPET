@@ -117,9 +117,9 @@ const Testimonials: React.FC = () => {
           ref={headerRef}
           className="text-center mb-16 scroll-animate"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
-            Lo que dicen nuestros <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-              Clientes Felices
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-bebas uppercase">
+            LO QUE DICEN NUESTROS <span className="text-[#96BE11]">
+              CLIENTES FELICES
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -260,7 +260,8 @@ const Testimonials: React.FC = () => {
         >
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-white mb-4 font-serif">
-              ¿Quieres que tu mascota sea la próxima historia de éxito?
+            <h3 className="text-2xl font-bold text-white mb-4 font-bebas uppercase">
+              ¿QUIERES QUE TU MASCOTA SEA LA PRÓXIMA HISTORIA DE ÉXITO?
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Únete a cientos de familias que ya han transformado la vida de sus mascotas con nuestra nutrición natural.

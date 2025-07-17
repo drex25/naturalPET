@@ -121,9 +121,9 @@ const Stats: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
-            Nuestros <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-              Números
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-bebas uppercase">
+            NUESTROS <span className="text-[#96BE11]">
+              NÚMEROS
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -180,7 +180,8 @@ const Stats: React.FC = () => {
         <div className="text-center mt-16 scroll-animate">
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-white mb-4 font-serif">
-              ¿Quieres ser parte de estas estadísticas?
+            <h3 className="text-2xl font-bold text-white mb-4 font-bebas uppercase">
+              ¿QUIERES SER PARTE DE ESTAS ESTADÍSTICAS?
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Únete a cientos de familias que ya han transformado la vida de sus mascotas con nuestra nutrición natural.
