@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Image-specific directives
+Allow: /assets/*.jpg
+Allow: /assets/*.jpeg
+Allow: /assets/*.png
+Allow: /assets/*.webp
+Allow: /assets/*.avif
+Allow: /assets/*.svg
+
+# Sitemap locations
+Sitemap: https://naturalpet.com/sitemap.xml
+Sitemap: https://naturalpet.com/sitemap-images.xml
+
+# Crawl-delay for image-heavy pages
+Crawl-delay: 1
+
+# Block access to source maps and development files
+Disallow: /*.map$
+Disallow: /src/
+Disallow: /node_modules/

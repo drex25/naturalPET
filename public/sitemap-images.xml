@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://naturalpet.com/</loc>
+    <image:image>
+      <image:loc>https://naturalpet.com/assets/naturalpet-perros-gatos-felices-nutricion-natural.jpg</image:loc>
+      <image:caption>Perros y gatos felices con nutrición natural NaturalPET</image:caption>
+      <image:title>Mascotas felices con alimentación natural</image:title>
+      <image:license>https://naturalpet.com/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://naturalpet.com/assets/naturalpet-soluciones-nutricionales-mascotas.png</image:loc>
+      <image:caption>Soluciones nutricionales naturales para mascotas - Combos premium NaturalPET</image:caption>
+      <image:title>Catálogo de productos naturales para mascotas</image:title>
+      <image:license>https://naturalpet.com/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://naturalpet.com/assets/naturalpet-logo-tienda-naturista-mascotas.png</image:loc>
+      <image:caption>Logo NaturalPET - Primera tienda naturista para mascotas en Posadas</image:caption>
+      <image:title>NaturalPET Logo</image:title>
+      <image:license>https://naturalpet.com/license</image:license>
+    </image:image>
+  </url>
+
+  <!-- About Us Section Images -->
+  <url>
+    <loc>https://naturalpet.com/#sobre-nosotros</loc>
+    <image:image>
+      <image:loc>https://naturalpet.com/assets/naturalpet-equipo-profesional-nutricion-mascotas.jpg</image:loc>
+      <image:caption>Equipo profesional de NaturalPET especializado en nutrición natural para mascotas</image:caption>
+      <image:title>Profesionales en nutrición animal</image:title>
+      <image:license>https://naturalpet.com/license</image:license>
+    </image:image>
+  </url>
+
+  <!-- Services Section Images -->
+  <url>
+    <loc>https://naturalpet.com/#peluqueria</loc>
+    <image:image>
+      <image:loc>https://naturalpet.com/assets/naturalpet-bano-ecologico-peluqueria-canina.jpeg</image:loc>
+      <image:caption>Servicio de baño ecológico y peluquería canina con productos 100% naturales</image:caption>
+      <image:title>Baño ecológico y peluquería canina NaturalPET</image:title>
+      <image:license>https://naturalpet.com/license</image:license>
+    </image:image>
+  </url>
+
+  <!-- Guide Section Images -->
+  <url>
+    <loc>https://naturalpet.com/#guia</loc>
+    <image:image>
+      <image:loc>https://naturalpet.com/assets/naturalpet-guia-practica-nutricion-mascotas.jpeg</image:loc>
+      <image:caption>Guía práctica de nutrición natural para mascotas - Descarga gratuita</image:caption>
+      <image:title>Guía práctica de alimentación natural</image:title>
+      <image:license>https://naturalpet.com/license</image:license>
+    </image:image>
+  </url>
+
+</urlset>
