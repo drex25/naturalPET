@@ -6,19 +6,19 @@
   <url>
     <loc>https://naturalpet.com.ar/</loc>
     <image:image>
-      <image:loc>https://naturalpet.com.ar/assets/naturalpet-perros-gatos-felices-nutricion-natural.jpg</image:loc>
-      <image:caption>Perros y gatos felices con nutrición natural NaturalPET</image:caption>
-      <image:title>Mascotas felices con alimentación natural</image:title>
+      <image:loc>https://naturalpet.com.ar/assets/foto-hero.jpg</image:loc>
+      <image:caption>NaturalPET - Primera tienda naturista para mascotas con nutrición natural</image:caption>
+      <image:title>NaturalPET - Nutrición natural para mascotas</image:title>
       <image:license>https://naturalpet.com.ar/license</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://naturalpet.com.ar/assets/naturalpet-soluciones-nutricionales-mascotas.png</image:loc>
-      <image:caption>Soluciones nutricionales naturales para mascotas - Combos premium NaturalPET</image:caption>
-      <image:title>Catálogo de productos naturales para mascotas</image:title>
+      <image:loc>https://naturalpet.com.ar/assets/portada.png</image:loc>
+      <image:caption>Portada NaturalPET - Soluciones nutricionales naturales para mascotas</image:caption>
+      <image:title>Portada NaturalPET</image:title>
       <image:license>https://naturalpet.com.ar/license</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://naturalpet.com.ar/assets/naturalpet-logo-tienda-naturista-mascotas.png</image:loc>
+      <image:loc>https://naturalpet.com.ar/assets/logo natural.png</image:loc>
       <image:caption>Logo NaturalPET - Primera tienda naturista para mascotas en Posadas</image:caption>
       <image:title>NaturalPET Logo</image:title>
       <image:license>https://naturalpet.com.ar/license</image:license>
@@ -29,9 +29,15 @@
   <url>
     <loc>https://naturalpet.com.ar/#sobre-nosotros</loc>
     <image:image>
-      <image:loc>https://naturalpet.com.ar/assets/naturalpet-equipo-profesional-nutricion-mascotas.jpg</image:loc>
-      <image:caption>Equipo profesional de NaturalPET especializado en nutrición natural para mascotas</image:caption>
-      <image:title>Profesionales en nutrición animal</image:title>
+      <image:loc>https://naturalpet.com.ar/assets/perro y gato foto.png</image:loc>
+      <image:caption>Perros y gatos felices con nutrición natural NaturalPET</image:caption>
+      <image:title>Mascotas felices con alimentación natural</image:title>
+      <image:license>https://naturalpet.com.ar/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://naturalpet.com.ar/assets/perro y gato icono.png</image:loc>
+      <image:caption>Icono NaturalPET - Especialistas en nutrición natural para mascotas</image:caption>
+      <image:title>Icono NaturalPET</image:title>
       <image:license>https://naturalpet.com.ar/license</image:license>
     </image:image>
   </url>
@@ -40,7 +46,7 @@
   <url>
     <loc>https://naturalpet.com.ar/#peluqueria</loc>
     <image:image>
-      <image:loc>https://naturalpet.com.ar/assets/naturalpet-bano-ecologico-peluqueria-canina.jpeg</image:loc>
+      <image:loc>https://naturalpet.com.ar/assets/servicio.jpeg</image:loc>
       <image:caption>Servicio de baño ecológico y peluquería canina con productos 100% naturales</image:caption>
       <image:title>Baño ecológico y peluquería canina NaturalPET</image:title>
       <image:license>https://naturalpet.com.ar/license</image:license>
@@ -51,7 +57,7 @@
   <url>
     <loc>https://naturalpet.com.ar/#guia</loc>
     <image:image>
-      <image:loc>https://naturalpet.com.ar/assets/naturalpet-guia-practica-nutricion-mascotas.jpeg</image:loc>
+      <image:loc>https://naturalpet.com.ar/assets/guia.jpeg</image:loc>
       <image:caption>Guía práctica de nutrición natural para mascotas - Descarga gratuita</image:caption>
       <image:title>Guía práctica de alimentación natural</image:title>
       <image:license>https://naturalpet.com.ar/license</image:license>
