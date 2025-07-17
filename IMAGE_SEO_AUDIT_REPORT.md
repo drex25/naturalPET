@@ -216,9 +216,9 @@ const compressionSettings = {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://naturalpet.com/</loc>
+    <loc>https://naturalpet.com.ar/</loc>
     <image:image>
-      <image:loc>https://naturalpet.com/assets/naturalpet-hero.jpg</image:loc>
+      <image:loc>https://naturalpet.com.ar/assets/naturalpet-hero.jpg</image:loc>
       <image:caption>Perros y gatos felices con nutrición natural</image:caption>
       <image:title>Mascotas saludables NaturalPET</image:title>
     </image:image>
