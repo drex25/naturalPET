@@ -249,7 +249,7 @@ const Guide: React.FC = () => {
 
                 {/* Main Title */}
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-bebas uppercase leading-tight">
-                  ¿LISTO PARA{' '}
+                  ¿LISTA PARA{' '}
                   <span className="text-[#96BE11]">
                     COMENZAR
                   </span>
