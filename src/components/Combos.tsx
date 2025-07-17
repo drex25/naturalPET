@@ -133,7 +133,7 @@ const Combos: React.FC = () => {
           {combos.map((combo, index) => (
             <div
               key={combo.id}
-              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 h-[600px] ${
+              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 h-[700px] ${
                 index === activeCombo ? 'scale-105' : ''
               }`}
               onMouseEnter={() => setHoveredCombo(combo.id)}
@@ -214,7 +214,7 @@ const Combos: React.FC = () => {
         {/* CTA Section */}
         <div 
           ref={ctaRef}
-          className="text-center scroll-animate"
+          className="text-center scroll-animate mt-16"
         >
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-white mb-4 font-serif">
