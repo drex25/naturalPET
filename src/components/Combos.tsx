@@ -154,16 +154,25 @@ const Combos: React.FC = () => {
 
                 {/* Combo Image */}
                 <div className="mb-6 relative">
-                  <div className="w-full h-32 bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-xl flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-40 bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-xl flex items-center justify-center overflow-hidden relative">
                     <img
                       src={portadaImage}
                       alt={combo.name}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                    
+                    {/* Overlay con información del combo */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="text-white text-sm font-medium">Solución Natural</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1">
-                    <span className="text-xs text-white font-medium">Natural</span>
+                  
+                  {/* Badge flotante */}
+                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#96BE11] to-[#EF9202] rounded-lg px-3 py-1 shadow-lg">
+                    <span className="text-xs text-white font-semibold">100% Natural</span>
                   </div>
                 </div>
 
