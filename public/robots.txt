@@ -10,8 +10,8 @@ Allow: /assets/*.avif
 Allow: /assets/*.svg
 
 # Sitemap locations
-Sitemap: https://naturalpet.com/sitemap.xml
-Sitemap: https://naturalpet.com/sitemap-images.xml
+Sitemap: https://naturalpet.com.ar/sitemap.xml
+Sitemap: https://naturalpet.com.ar/sitemap-images.xml
 
 # Crawl-delay for image-heavy pages
 Crawl-delay: 1
