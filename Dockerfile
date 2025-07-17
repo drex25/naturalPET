@@ -1,23 +1,35 @@
-# Use Node.js LTS version
-FROM node:20-alpine
+# Build stage
+FROM node:18-alpine AS build
 
-# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package files
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install 
+RUN npm ci --only=production
 
-# Copy the rest of the application code
+# Copy all files
 COPY . .
 
-# Build the application
-RUN npm run build   
+# Build the app
+RUN npm run build
 
-# Expose the port the app runs on
-EXPOSE 5173
+# Production stage
+FROM nginx:alpine
 
-# Start the application
-CMD ["npm", "run", "dev"]
+# Copy built assets from build stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Create directories in nginx and ensure permissions
+RUN mkdir -p /usr/share/nginx/html/assets /usr/share/nginx/html/data && \
+    chmod -R 755 /usr/share/nginx/html/assets /usr/share/nginx/html/data
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"] 

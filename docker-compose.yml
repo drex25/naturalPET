@@ -1,11 +1,30 @@
+version: '3.8'
+
 services:
-  app:
-    build: .
+  naturalpet:
+    container_name: naturalpet-app
+    build:
+      context: .
+    expose:
+      - "80"
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
     ports:
-      - "5173:5173"
+      - "80:80"
+      - "443:443"
     volumes:
-      - .:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
-    command: npm run dev -- --host 
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    depends_on:
+      - naturalpet
+
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
+    external: true
