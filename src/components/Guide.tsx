@@ -123,9 +123,9 @@ const Guide: React.FC = () => {
           ref={headerRef}
           className="text-center mb-16 scroll-animate"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
-            Guía <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-              Práctica
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-bebas uppercase">
+            GUÍA <span className="text-[#96BE11]">
+              PRÁCTICA
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -138,8 +138,8 @@ const Guide: React.FC = () => {
           ref={benefitsRef}
           className="mb-20 scroll-animate"
         >
-          <h3 className="text-2xl font-bold text-white text-center mb-12">
-            ¿Por qué elegir alimentación saludable y sostenible?
+          <h3 className="text-2xl font-bold text-white text-center mb-12 font-bebas uppercase">
+            ¿POR QUÉ ELEGIR ALIMENTACIÓN SALUDABLE Y SOSTENIBLE?
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
@@ -179,8 +179,8 @@ const Guide: React.FC = () => {
 
         {/* Process Steps */}
         <div ref={stepsRef}>
-          <h3 className="text-2xl font-bold text-white text-center mb-12 scroll-animate">
-            Nuestro proceso en 4 pasos
+          <h3 className="text-2xl font-bold text-white text-center mb-12 font-bebas uppercase">
+            NUESTRO PROCESO EN 4 PASOS
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
@@ -248,10 +248,10 @@ const Guide: React.FC = () => {
                 </div>
 
                 {/* Main Title */}
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-serif leading-tight">
-                  ¿Listo para{' '}
-                  <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-                    comenzar
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-bebas uppercase leading-tight">
+                  ¿LISTO PARA{' '}
+                  <span className="text-[#96BE11]">
+                    COMENZAR
                   </span>
                   ?
                 </h3>
