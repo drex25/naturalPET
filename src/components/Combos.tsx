@@ -133,7 +133,7 @@ const Combos: React.FC = () => {
           {combos.map((combo, index) => (
             <div
               key={combo.id}
-              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 h-[700px] ${
+              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
                 index === activeCombo ? 'scale-105' : ''
               }`}
               onMouseEnter={() => setHoveredCombo(combo.id)}
@@ -143,7 +143,7 @@ const Combos: React.FC = () => {
                 combo.popular 
                   ? `border-[#EF9202] shadow-2xl shadow-[#EF9202]/20 bg-gradient-to-br from-[#EF9202]/10 to-[#EF9202]/5` 
                   : `border-gray-700 hover:border-[#96BE11] ${hoveredCombo === combo.id ? 'shadow-2xl shadow-[#96BE11]/20' : ''}`
-              } h-full flex flex-col`}>
+              } h-full flex flex-col justify-between`}>
                 {combo.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-gradient-to-r from-[#EF9202] to-[#EF9202]/90 text-black px-4 py-2 rounded-full text-sm font-semibold animate-pulse-glow">
@@ -152,49 +152,49 @@ const Combos: React.FC = () => {
                   </div>
                 )}
 
-                {/* Combo Image */}
-                <div className="mb-6 relative">
-                  <div className="w-full h-40 bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-xl flex items-center justify-center overflow-hidden relative">
-                    <img
-                      src={portadaImage}
-                      alt={combo.name}
-                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                    
-                    {/* Overlay con información del combo */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-black/60 backdrop-blur-sm rounded-lg px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-white text-sm font-medium">Solución Natural</span>
+                <div className="flex-1 flex flex-col">
+                  {/* Combo Image */}
+                  <div className="mb-6 relative">
+                    <div className="w-full h-40 bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-xl flex items-center justify-center overflow-hidden relative">
+                      <img
+                        src={portadaImage}
+                        alt={combo.name}
+                        className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                      {/* Overlay con información del combo */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-black/60 backdrop-blur-sm rounded-lg px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="text-white text-sm font-medium">Solución Natural</span>
+                        </div>
                       </div>
                     </div>
+                    {/* Badge flotante */}
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#96BE11] to-[#EF9202] rounded-lg px-3 py-1 shadow-lg">
+                      <span className="text-xs text-white font-semibold">100% Natural</span>
+                    </div>
                   </div>
-                  
-                  {/* Badge flotante */}
-                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#96BE11] to-[#EF9202] rounded-lg px-3 py-1 shadow-lg">
-                    <span className="text-xs text-white font-semibold">100% Natural</span>
+
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-2 font-serif group-hover:text-[#96BE11] transition-colors duration-300 min-h-[3rem] flex items-center justify-center">
+                      {combo.name}
+                    </h3>
+                    <p className="text-gray-400 mb-4 min-h-[3rem] flex items-center justify-center text-center">{combo.description}</p>
                   </div>
-                </div>
 
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2 font-serif group-hover:text-[#96BE11] transition-colors duration-300 min-h-[3rem] flex items-center justify-center">
-                    {combo.name}
-                  </h3>
-                  <p className="text-gray-400 mb-4 min-h-[3rem] flex items-center justify-center text-center">{combo.description}</p>
+                  <ul className="space-y-3 mb-8">
+                    {combo.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-300 list-item-animate group">
+                        <div className="flex-shrink-0 w-5 h-5 bg-[#96BE11]/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-[#96BE11]/30 transition-all duration-300">
+                          <svg className="w-3 h-3 text-[#96BE11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="group-hover:text-white transition-colors duration-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {combo.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-300 list-item-animate group">
-                      <div className="flex-shrink-0 w-5 h-5 bg-[#96BE11]/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-[#96BE11]/30 transition-all duration-300">
-                        <svg className="w-3 h-3 text-[#96BE11]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="group-hover:text-white transition-colors duration-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
 
                 <div className="mt-auto">
                   <button
