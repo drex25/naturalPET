@@ -35,25 +35,25 @@ const Contact: React.FC = () => {
     {
       icon: "💬",
       title: "Asesoramiento Gratuito",
-      description: "Consulta inicial sin costo para evaluar las necesidades de tu mascota",
+      description: "Consulta sin costo para evaluar las necesidades de tu mascota",
       color: "from-[#96BE11] to-[#96BE11]/90"
     },
     {
       icon: "📱",
       title: "Respuesta Rápida",
-      description: "Atendemos de lunes a sábados de 9:00 a 18:00 horas",
+      description: "Atendemos de lunes a sábados de 7:30 a 12:30 horas y 15:30 a 19:30 horas",
       color: "from-[#EF9202] to-[#EF9202]/90"
     },
     {
       icon: "📍",
-      title: "Ubicación Céntrica",
-      description: "Encontranos en el corazón de la ciudad, fácil acceso",
+      title: "Ubicación Estratégica",
+      description: "Encontranos en el principal acceso a la ciudad. A metros de la rotonda de Av. Uriguay y Ruta 12.",
       color: "from-[#F4D03F] to-[#F4D03F]/90"
     },
     {
       icon: "🎯",
       title: "Seguimiento Personalizado",
-      description: "Acompañamiento continuo en el proceso de tu mascota",
+      description: "Acompañamiento continuo en la nutrición de tu mascota",
       color: "from-[#96BE11] to-[#EF9202]"
     }
   ];
