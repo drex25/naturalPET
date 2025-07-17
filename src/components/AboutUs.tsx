@@ -164,6 +164,21 @@ const AboutUs: React.FC = () => {
                 Soluciones Nutricionales
               </div>
               
+              {/* Link a catálogo */}
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                <a
+                  href="https://wa.me/c/5493764518346"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gradient-to-r from-[#96BE11] to-[#EF9202] hover:from-[#EF9202] hover:to-[#96BE11] text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center animate-pulse-glow"
+                >
+                  <svg className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                  Soluciones Nutricionales
+                </a>
+              </div>
+              
               {/* Enhanced decorative elements */}
               <div className="absolute -top-4 -left-4 w-8 h-8 border-2 border-[#96BE11]/30 rounded-full animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-6 h-6 border-2 border-[#EF9202]/20 rounded-full animate-pulse delay-500"></div>

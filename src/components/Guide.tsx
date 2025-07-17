@@ -129,7 +129,7 @@ const Guide: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Descubre cómo hacer la transición a una alimentación natural de manera simple y efectiva
+            Descubre cómo hacer la transición a una alimentación natural mixta con balanceado potenciado de manera simple y efectiva
           </p>
         </div>
 
@@ -139,7 +139,7 @@ const Guide: React.FC = () => {
           className="mb-20 scroll-animate"
         >
           <h3 className="text-2xl font-bold text-white text-center mb-12">
-            ¿Por qué elegir alimentación natural?
+            ¿Por qué elegir alimentación saludable y sostenible?
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
