@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import OptimizedImage from './OptimizedImage';
 
-// Optimized image imports with proper naming
-import heroImageSrc from '../assets/naturalpet-perros-gatos-felices-nutricion-natural.jpg';
-import portadaImageSrc from '../assets/naturalpet-soluciones-nutricionales-mascotas.png';
+// Import existing image files
+import heroImageSrc from '../assets/perro y gato foto.png';
+import portadaImageSrc from '../assets/portada.png';
 
 const Hero: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -17,18 +17,18 @@ const Hero: React.FC = () => {
   const images = [
     { 
       src: heroImageSrc, 
-      alt: "Perros y gatos felices con nutrición natural NaturalPET - Primera tienda naturista para mascotas en Posadas",
+      alt: "Perros y gatos felices con nutrición natural NaturalPET - Primera tienda naturista para mascotas en Posadas, Misiones",
       srcSet: `
-        ${heroImageSrc.replace('.jpg', '-400w.jpg')} 400w,
-        ${heroImageSrc.replace('.jpg', '-800w.jpg')} 800w,
-        ${heroImageSrc.replace('.jpg', '-1200w.jpg')} 1200w,
-        ${heroImageSrc.replace('.jpg', '-1600w.jpg')} 1600w
+        ${heroImageSrc.replace('.png', '-400w.png')} 400w,
+        ${heroImageSrc.replace('.png', '-800w.png')} 800w,
+        ${heroImageSrc.replace('.png', '-1200w.png')} 1200w,
+        ${heroImageSrc.replace('.png', '-1600w.png')} 1600w
       `,
       sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
     },
     { 
       src: portadaImageSrc, 
-      alt: "Soluciones nutricionales naturales para mascotas - Combos premium NaturalPET",
+      alt: "Soluciones nutricionales naturales para mascotas - Combos premium NaturalPET - Posadas, Misiones",
       srcSet: `
         ${portadaImageSrc.replace('.png', '-400w.png')} 400w,
         ${portadaImageSrc.replace('.png', '-800w.png')} 800w,
@@ -215,7 +215,7 @@ const Hero: React.FC = () => {
           <div className="bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-2xl p-4 backdrop-blur-sm border border-[#96BE11]/30">
             <OptimizedImage
               src={portadaImageSrc}
-              alt="Catálogo de productos naturales NaturalPET - Suplementos y alimentos para mascotas"
+              alt="Catálogo de productos naturales NaturalPET - Suplementos y alimentos para mascotas - Posadas, Misiones"
               className="w-32 h-32 object-cover rounded-xl shadow-2xl"
               loading="lazy"
               width={128}
