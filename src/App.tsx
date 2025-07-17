@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs';
 import WhyChooseUs from './components/WhyChooseUs';
 import Combos from './components/Combos';
 import Stats from './components/Stats';
+import Grooming from './components/Grooming';
 import Testimonials from './components/Testimonials';
 import Guide from './components/Guide';
 import Contact from './components/Contact';
@@ -36,6 +37,7 @@ function App() {
       <WhyChooseUs />
       <Combos />
       <Stats />
+      <Grooming />
       <Testimonials />
       <Guide />
       <Contact />

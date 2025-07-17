@@ -24,6 +24,7 @@ const Header: React.FC = () => {
     { name: 'Inicio', href: '#inicio', icon: Home, color: 'from-[#96BE11] to-[#96BE11]/90' },
     { name: 'Sobre Nosotros', href: '#sobre-nosotros', icon: Users, color: 'from-[#F4D03F] to-[#F4D03F]/90' },
     { name: 'Combos', href: '#combos', icon: Package, color: 'from-[#EF9202] to-[#EF9202]/90' },
+    { name: 'Peluquería', href: '#peluqueria', icon: Heart, color: 'from-[#96BE11] to-[#EF9202]' },
     { name: 'Guía Práctica', href: '#guia', icon: BookOpen, color: 'from-[#96BE11] to-[#EF9202]' },
     { name: 'Contacto', href: '#contacto', icon: Phone, color: 'from-[#EF9202] to-[#F4D03F]' }
   ];
@@ -32,6 +33,7 @@ const Header: React.FC = () => {
     { name: 'Inicio', href: '#inicio', icon: Home, description: 'Volver al inicio' },
     { name: 'Sobre Nosotros', href: '#sobre-nosotros', icon: Users, description: 'Conoce nuestro equipo' },
     { name: 'Soluciones Nutricionales', href: '#combos', icon: Package, description: 'Nuestros combos naturales' },
+    { name: 'Peluquería Canina', href: '#peluqueria', icon: Heart, description: 'Baño ecológico y peluquería' },
     { name: 'Guía Práctica', href: '#guia', icon: BookOpen, description: 'Aprende sobre nutrición' },
     { name: 'Contacto', href: '#contacto', icon: Phone, description: 'Habla con nosotros' }
   ];
