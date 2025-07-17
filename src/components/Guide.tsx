@@ -145,7 +145,7 @@ const Guide: React.FC = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className={`text-center group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                className={`text-center group cursor-pointer transition-all duration-500 transform hover:scale-105 h-72 ${
                   hoveredBenefit === index ? 'scale-105' : ''
                 }`}
                 onMouseEnter={() => setHoveredBenefit(index)}
@@ -155,16 +155,16 @@ const Guide: React.FC = () => {
                   hoveredBenefit === index 
                     ? 'border-[#96BE11] shadow-2xl shadow-[#96BE11]/20' 
                     : 'border-gray-700 hover:border-[#96BE11]/50'
-                }`}>
+                } h-full flex flex-col`}>
                   <div className="flex justify-center mb-6">
                     <div className={`w-16 h-16 rounded-2xl ${benefit.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       {benefit.icon}
                     </div>
                   </div>
-                  <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-[#96BE11] transition-colors duration-300">
+                  <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-[#96BE11] transition-colors duration-300 min-h-[3rem] flex items-center justify-center">
                     {benefit.title}
                   </h4>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed flex-1 flex items-center justify-center text-center">
                     {benefit.description}
                   </p>
 
@@ -186,7 +186,7 @@ const Guide: React.FC = () => {
             {steps.map((step, index) => (
               <div 
                 key={index} 
-                className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 h-80 ${
                   index === activeStep ? 'scale-105' : ''
                 }`}
                 onClick={() => setActiveStep(index)}
@@ -195,7 +195,7 @@ const Guide: React.FC = () => {
                   index === activeStep 
                     ? 'border-[#96BE11] shadow-2xl shadow-[#96BE11]/20 bg-gradient-to-br from-[#96BE11]/10 to-[#96BE11]/5' 
                     : 'border-gray-700 hover:border-[#96BE11]/50'
-                }`}>
+                } h-full flex flex-col`}>
                   {/* Step number with gradient */}
                   <div className={`text-4xl font-bold mb-4 bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
                     {step.number}
@@ -206,10 +206,10 @@ const Guide: React.FC = () => {
                     {step.icon}
                   </div>
                   
-                  <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-[#96BE11] transition-colors duration-300">
+                  <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-[#96BE11] transition-colors duration-300 min-h-[3rem] flex items-center">
                     {step.title}
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-sm leading-relaxed flex-1">
                     {step.description}
                   </p>
 

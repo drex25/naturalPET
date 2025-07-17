@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className={`text-center group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                    className={`text-center group cursor-pointer transition-all duration-500 transform hover:scale-105 h-64 ${
                       hoveredFeature === index ? 'scale-105' : ''
                     }`}
                     onMouseEnter={() => setHoveredFeature(index)}
@@ -199,14 +199,14 @@ const Contact: React.FC = () => {
                       hoveredFeature === index 
                         ? 'border-[#96BE11] shadow-2xl shadow-[#96BE11]/20' 
                         : 'border-gray-700 hover:border-[#96BE11]/50'
-                    }`}>
+                    } h-full flex flex-col`}>
                       <div className={`w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
                         {feature.icon}
                       </div>
-                      <h4 className="text-sm font-semibold text-white mb-2 group-hover:text-[#96BE11] transition-colors duration-300">
+                      <h4 className="text-sm font-semibold text-white mb-2 group-hover:text-[#96BE11] transition-colors duration-300 min-h-[2.5rem] flex items-center justify-center text-center">
                         {feature.title}
                       </h4>
-                      <p className="text-gray-400 text-xs leading-relaxed">
+                      <p className="text-gray-400 text-xs leading-relaxed flex-1 flex items-center justify-center text-center">
                         {feature.description}
                       </p>
                     </div>

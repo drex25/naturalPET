@@ -145,7 +145,7 @@ const WhyChooseUs: React.FC = () => {
             return (
               <div
                 key={index}
-                className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 h-80 ${
                   isActive ? 'scale-105' : ''
                 }`}
                 onClick={() => setActiveFeature(index)}
@@ -154,7 +154,7 @@ const WhyChooseUs: React.FC = () => {
                   isActive 
                     ? `border-[#96BE11] shadow-2xl shadow-[#96BE11]/20 ${feature.bgColor}` 
                     : 'border-gray-700 hover:border-[#96BE11]/50'
-                }`}>
+                } h-full flex flex-col`}>
                   {/* Icon with gradient background */}
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     {feature.customIcon ? (
@@ -169,10 +169,10 @@ const WhyChooseUs: React.FC = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#96BE11] transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#96BE11] transition-colors duration-300 min-h-[3rem] flex items-center">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed flex-1">
                     {feature.description}
                   </p>
 
