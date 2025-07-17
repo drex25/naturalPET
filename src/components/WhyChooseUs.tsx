@@ -217,7 +217,7 @@ const WhyChooseUs: React.FC = () => {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-white mb-4">
-              ¡Únete a la familia NaturalPET!
+              ¡ÚNETE A LA FAMILIA NATURALPET!
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Descubre por qué somos la elección preferida de más de 500 familias para el cuidado de sus mascotas.

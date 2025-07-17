@@ -59,10 +59,7 @@ const Grooming: React.FC = () => {
 
               {/* Title */}
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-bebas uppercase">
-                BAÑO ECOLÓGICO Y{' '}
-                <span className="text-[#96BE11]">
-                  PELUQUERÍA CANINA
-                </span>
+                <span className="text-[#96BE11]">BAÑO ECOLÓGICO</span> Y PELUQUERÍA CANINA
               </h2>
             </div>
 

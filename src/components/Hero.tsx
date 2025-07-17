@@ -164,15 +164,15 @@ const Hero: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto scroll-animate"
           >
             <div className="text-center group">
-              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-serif group-hover:scale-110 transition-transform duration-300">100%</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-bebas group-hover:scale-110 transition-transform duration-300">100%</div>
               <div className="text-gray-300 text-xs sm:text-sm tracking-wide">Natural</div>
             </div>
             <div className="text-center group">
-              <div className="text-2xl sm:text-3xl font-bold text-[#EF9202] mb-2 font-serif group-hover:scale-110 transition-transform duration-300">+500</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#EF9202] mb-2 font-bebas group-hover:scale-110 transition-transform duration-300">+500</div>
               <div className="text-gray-300 text-xs sm:text-sm tracking-wide">Mascotas Felices</div>
             </div>
             <div className="text-center group">
-              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-serif group-hover:scale-110 transition-transform duration-300">24/7</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#96BE11] mb-2 font-bebas group-hover:scale-110 transition-transform duration-300">24/7</div>
               <div className="text-gray-300 text-xs sm:text-sm tracking-wide">Asesoramiento</div>
             </div>
           </div>

@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-bebas uppercase">
             ¡CONECTEMOS POR <span className="text-[#96BE11]">
               WHATSAPP
-            </span>
+            </span>!
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Estamos aquí para ayudarte a darle a tu mascota la nutrición que se merece. 
