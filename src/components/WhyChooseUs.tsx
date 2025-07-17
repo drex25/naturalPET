@@ -121,10 +121,10 @@ const WhyChooseUs: React.FC = () => {
           ref={headerRef}
           className="text-center mb-16 scroll-animate"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
-            ¿Por qué elegir{' '}
-            <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-              NaturalPET
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-bebas uppercase">
+            ¿POR QUÉ ELEGIR{' '}
+            <span className="text-[#96BE11]">
+              NATURALPET
             </span>
             ?
           </h2>

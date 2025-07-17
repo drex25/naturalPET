@@ -68,13 +68,13 @@ const AboutUs: React.FC = () => {
             <div className="space-y-6">
               <h2 
                 ref={titleRef}
-                className="text-4xl md:text-5xl font-bold text-white leading-tight font-serif scroll-animate"
+                className="text-4xl md:text-5xl font-bold text-white leading-tight font-bebas uppercase scroll-animate"
               >
-                La primera tienda{' '}
-                <span className="text-[#96BE11] bg-gradient-to-r from-[#96BE11] to-[#EF9202] bg-clip-text text-transparent animate-pulse-glow">
-                  naturista
+                LA PRIMERA TIENDA{' '}
+                <span className="text-[#96BE11]">
+                  NATURISTA
                 </span>{' '}
-                para mascotas
+                PARA MASCOTAS
               </h2>
               <div 
                 ref={contentRef}

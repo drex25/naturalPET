@@ -112,11 +112,11 @@ const Hero: React.FC = () => {
           {/* Main Title */}
           <h1 
             ref={titleRef}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight font-serif scroll-animate"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight font-bebas uppercase scroll-animate"
           >
-            ¡Nutrimos su{' '}
-            <span className="text-[#EF9202] animate-pulse-glow">
-              naturaleza!
+            ¡NUTRIMOS SU{' '}
+            <span className="text-[#EF9202]">
+              NATURALEZA!
             </span>
           </h1>
 

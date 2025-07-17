@@ -25,6 +25,7 @@ export default {
       fontFamily: {
         serif: ['Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        bebas: ['Bebas Neue', 'cursive'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
