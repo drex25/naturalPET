@@ -179,7 +179,6 @@ const Stats: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16 scroll-animate">
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold text-white mb-4 font-serif">
             <h3 className="text-2xl font-bold text-white mb-4 font-bebas uppercase">
               ¿QUIERES SER PARTE DE ESTAS ESTADÍSTICAS?
             </h3>
