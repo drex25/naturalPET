@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import OptimizedImage from './OptimizedImage';
 
 // Import existing image files
 import heroImageSrc from '../assets/perro y gato foto.png';
@@ -17,24 +16,11 @@ const Hero: React.FC = () => {
   const images = [
     { 
       src: heroImageSrc, 
-      alt: "Perros y gatos felices con nutrición natural NaturalPET - Primera tienda naturista para mascotas en Posadas, Misiones",
-      srcSet: `
-        ${heroImageSrc.replace('.png', '-400w.png')} 400w,
-        ${heroImageSrc.replace('.png', '-800w.png')} 800w,
-        ${heroImageSrc.replace('.png', '-1200w.png')} 1200w,
-        ${heroImageSrc.replace('.png', '-1600w.png')} 1600w
-      `,
-      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+      alt: "Perros y gatos felices con nutrición natural NaturalPET - Primera tienda naturista para mascotas en Posadas, Misiones"
     },
     { 
       src: portadaImageSrc, 
-      alt: "Soluciones nutricionales naturales para mascotas - Combos premium NaturalPET - Posadas, Misiones",
-      srcSet: `
-        ${portadaImageSrc.replace('.png', '-400w.png')} 400w,
-        ${portadaImageSrc.replace('.png', '-800w.png')} 800w,
-        ${portadaImageSrc.replace('.png', '-1200w.png')} 1200w
-      `,
-      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+      alt: "Soluciones nutricionales naturales para mascotas - Combos premium NaturalPET - Posadas, Misiones"
     }
   ];
 
@@ -93,15 +79,10 @@ const Hero: React.FC = () => {
               index === currentImage ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <OptimizedImage
+            <img
               src={image.src}
               alt={image.alt}
-              srcSet={image.srcSet}
-              sizes={image.sizes}
-              loading={index === 0 ? 'eager' : 'lazy'}
               className="w-full h-full object-cover"
-              width={1600}
-              height={900}
             />
             <div className="absolute inset-0 bg-black/60"></div>
             {/* Gradient overlay for extra depth */}
@@ -213,13 +194,10 @@ const Hero: React.FC = () => {
       >
         <div className="relative">
           <div className="bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-2xl p-4 backdrop-blur-sm border border-[#96BE11]/30">
-            <OptimizedImage
+            <img
               src={portadaImageSrc}
               alt="Catálogo de productos naturales NaturalPET - Suplementos y alimentos para mascotas - Posadas, Misiones"
               className="w-32 h-32 object-cover rounded-xl shadow-2xl"
-              loading="lazy"
-              width={128}
-              height={128}
             />
             <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-[#96BE11] to-[#EF9202] text-white px-3 py-1 rounded-lg text-xs font-semibold shadow-lg">
               ¡Natural!
