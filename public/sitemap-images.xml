@@ -53,6 +53,29 @@
     </image:image>
   </url>
 
+  <!-- Combos Section Images -->
+  <url>
+    <loc>https://naturalpet.com.ar/#combos</loc>
+    <image:image>
+      <image:loc>https://naturalpet.com.ar/assets/inicial.png</image:loc>
+      <image:caption>Combo Inicial NaturalPET - Perfecto para comenzar la transición a nutrición saludable</image:caption>
+      <image:title>Combo Inicial NaturalPET</image:title>
+      <image:license>https://naturalpet.com.ar/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://naturalpet.com.ar/assets/premium.png</image:loc>
+      <image:caption>Combo Premium NaturalPET - Solución completa para bienestar integral de mascotas</image:caption>
+      <image:title>Combo Premium NaturalPET</image:title>
+      <image:license>https://naturalpet.com.ar/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://naturalpet.com.ar/assets/familiar.png</image:loc>
+      <image:caption>Combo Familiar NaturalPET - Ideal para hogares con múltiples mascotas</image:caption>
+      <image:title>Combo Familiar NaturalPET</image:title>
+      <image:license>https://naturalpet.com.ar/license</image:license>
+    </image:image>
+  </url>
+
   <!-- Guide Section Images -->
   <url>
     <loc>https://naturalpet.com.ar/#guia</loc>

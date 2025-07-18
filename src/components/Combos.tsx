@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import portadaImage from '../assets/portada.png';
+import inicialImage from '../assets/inicial.png';
+import premiumImage from '../assets/premium.png';
+import familiarImage from '../assets/familiar.png';
 import GuideModal from './GuideModal';
 
 const Combos: React.FC = () => {
@@ -12,6 +15,7 @@ const Combos: React.FC = () => {
       id: 1,
       name: "Combo Inicial",
       description: "Perfecto para comenzar la transición a una nutrición saludable",
+      image: inicialImage,
       features: [
         "Alimentos naturales premium",
         "Suplementos protéicos naturales",
@@ -28,6 +32,7 @@ const Combos: React.FC = () => {
       id: 2,
       name: "Combo Premium",
       description: "La solución más completa para el bienestar integral de tu mascota",
+      image: premiumImage,
       features: [
         "Alimentos naturales premium",
         "Suplementos protéicos naturales",
@@ -47,6 +52,7 @@ const Combos: React.FC = () => {
       id: 3,
       name: "Combo Familiar",
       description: "Ideal para hogares con múltiples mascotas",
+      image: familiarImage,
       features: [
         "Alimentos naturales premium",
         "Suplementos protéicos naturales",
@@ -157,7 +163,7 @@ const Combos: React.FC = () => {
                   <div className="mb-6 relative">
                     <div className="w-full h-40 bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-xl flex items-center justify-center overflow-hidden relative">
                       <img
-                        src={portadaImage}
+                        src={combo.image}
                         alt={combo.name}
                         className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                       />
