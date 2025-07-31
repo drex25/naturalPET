@@ -3,6 +3,7 @@ import portadaImage from '../assets/portada.png';
 import inicialImage from '../assets/inicial.png';
 import premiumImage from '../assets/premium.png';
 import familiarImage from '../assets/familiar.png';
+import pasosImage from '../assets/pasos.png';
 import GuideModal from './GuideModal';
 
 const Combos: React.FC = () => {
@@ -232,9 +233,24 @@ const Combos: React.FC = () => {
           className="text-center scroll-animate mt-16"
         >
           <div className="bg-gradient-to-r from-[#96BE11]/10 to-[#EF9202]/5 rounded-2xl p-8 border border-[#96BE11]/20 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold text-white mb-4 font-bebas uppercase">
-              ¿POR QUÉ HABLAMOS DE POTENCIAR EL ALIMENTO BALANCEADO?
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 font-bebas uppercase leading-tight">
+              ¿POR QUÉ HABLAMOS DE{' '}
+              <span className="text-[#96BE11]">POTENCIAR</span>{' '}
+              EL ALIMENTO BALANCEADO?
             </h3>
+            
+            {/* Image Section */}
+            <div className="mb-8 flex justify-center">
+              <div className="relative group">
+                <img
+                  src={pasosImage}
+                  alt="Pasos para potenciar el alimento balanceado"
+                  className="w-full max-w-2xl h-auto rounded-xl transform transition-all duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#96BE11]/10 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+            
             <p className="text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
               El concepto de completo y balanceado en los alimentos nunca es suficiente para una verdadera nutrición saludable. En la diversidad está la clave, al igual que la necesidad de humedad en los alimentos. Por eso, nuestras Soluciones Nutricionales están pensadas y conformadas por diversos productos, que con nuestro asesoramiento gratuito podrás aprender a alimentar de manera saludable y sostenible a tu mascota.
             </p>
