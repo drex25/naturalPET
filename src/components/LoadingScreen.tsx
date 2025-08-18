@@ -7,10 +7,7 @@ const LoadingScreen: React.FC = () => {
   const [showLogo, setShowLogo] = useState(false);
 
   const phrases = [
-    "Nutrimos su naturaleza...",
-    "Porque tu mascota merece lo mejor...",
-    "Cuidando a tu familia multiespecie...",
-    "Soluciones naturales para mascotas felices...",
+    "¿Sabías que puedes darle a tu mascota la calidad de vida que necesita y merece?",
     "Bienvenido a NaturalPET..."
   ];
 
@@ -20,15 +17,15 @@ const LoadingScreen: React.FC = () => {
       setShowLogo(true);
     }, 500);
 
-    // Cambiar frase cada 2 segundos
+    // Cambiar frase cada 3 segundos para dar más tiempo de lectura
     const phraseInterval = setInterval(() => {
       setCurrentPhrase((prev) => (prev + 1) % phrases.length);
-    }, 2000);
+    }, 3000);
 
-    // Ocultar loader después de 6 segundos
+    // Ocultar loader después de 8 segundos para asegurar que se vean ambas frases
     const hideTimeout = setTimeout(() => {
       setIsVisible(false);
-    }, 6000);
+    }, 8000);
 
     return () => {
       clearTimeout(logoTimer);
