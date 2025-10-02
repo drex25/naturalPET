@@ -44,7 +44,7 @@ dsabusiness.net, www.dsabusiness.net {
     redir @www https://dsabusiness.net{uri} permanent
     
     # Reverse proxy a DSA Business en puerto 3000
-    reverse_proxy localhost:3000 {
+    reverse_proxy 200.58.106.198:3000 {
         header_up Host {host}
         header_up X-Real-IP {remote}
         header_up X-Forwarded-For {remote}
