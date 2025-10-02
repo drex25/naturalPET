@@ -32,3 +32,31 @@ naturalpet.com.ar, www.naturalpet.com.ar {
         Referrer-Policy "strict-origin-when-cross-origin"
     }
 }
+
+# DSA Business - Proxy al puerto 3000
+dsabusiness.net, www.dsabusiness.net {
+    tls admin@dsabusiness.net
+    
+    # Redirect www to non-www
+    @www {
+        host www.dsabusiness.net
+    }
+    redir @www https://dsabusiness.net{uri} permanent
+    
+    # Reverse proxy a DSA Business en puerto 3000
+    reverse_proxy localhost:3000 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {scheme}
+    }
+    
+    encode gzip
+    
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options SAMEORIGIN
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+}
