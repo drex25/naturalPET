@@ -1,0 +1,52 @@
+{
+  "name": "NaturalPET - Nutrición Natural para Mascotas",
+  "short_name": "NaturalPET",
+  "description": "Primera tienda naturista para mascotas. Soluciones nutricionales naturales y asesoramiento personalizado.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#96BE11",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["pets", "health", "shopping"],
+  "icons": [
+    {
+      "src": "/assets/fav.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/fav.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/portada.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contactar con NaturalPET",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/assets/fav.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
+
