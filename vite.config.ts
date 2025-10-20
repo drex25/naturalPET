@@ -25,13 +25,8 @@ export default defineConfig({
       },
     },
     target: 'es2015',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    // Use esbuild for minification to avoid requiring terser in production images
+    minify: 'esbuild',
     chunkSizeWarningLimit: 1000,
   },
   publicDir: 'public',
