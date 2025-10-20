@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
     {
       icon: "📍",
       title: "Ubicación Estratégica",
-      description: "Encontranos en el principal acceso a la ciudad. A metros de la rotonda de Av. Uriguay y Ruta 12.",
+      description: "Encontranos en el corazón de Posadas a metros de SAMSA. Av. López y Planes 2718",
       color: "from-[#F4D03F] to-[#F4D03F]/90"
     },
     {
@@ -257,7 +257,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-medium">Dirección</p>
-                    <p className="text-gray-400 text-sm">Av. 45 nro 6865 (colectora R12, pegado a Madre selva), Posadas, Misiones</p>
+                    <p className="text-gray-400 text-sm">Av. López y Planes 2718. Posadas, Misiones.⁣⁣</p>
                   </div>
                 </div>
 
@@ -269,7 +269,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-white font-medium">Horarios</p>
-                    <p className="text-gray-400 text-sm">Lun-Sáb: 7:30-12:30 / 15:30-19:30</p>
+                    <p className="text-gray-400 text-sm">Lun-Sáb: 8:00-12:30 / 16:30-20:30</p>
                   </div>
                 </div>
 
