@@ -230,7 +230,7 @@ const Contact: React.FC = () => {
               <div className="relative mb-6">
                 <div className="w-full h-64 bg-gradient-to-br from-[#96BE11]/20 to-[#EF9202]/10 rounded-xl flex items-center justify-center overflow-hidden">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.861029113038!2d-55.9015465!3d-27.4112647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457bf713e27149b%3A0x73b9a970f065582f!2sNatural%20Pet!5e0!3m2!1sen!2sar!4v1752600963336!5m2!1sen!2sar" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.0730839389003!2d-55.90689302450201!3d-27.373432876375634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457be3877c83f6f%3A0x9d2f706bb24588a5!2sAv.%20L%C3%B3pez%20y%20Planes%202718%2C%20N3301ELK%20Posadas%2C%20Misiones!5e0!3m2!1sen!2sar!4v1760964420703!5m2!1sen!2sar" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 

@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Av. 45 nro 6865 (colectora R12, pegado a Madre selva), Posadas, Misiones</span>
+                <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Av. López y Planes 2718. Posadas, Misiones.⁣⁣</span>
               </div>
               <div className="flex items-center space-x-3 group">
                 <div className="w-10 h-10 bg-[#EF9202]/20 rounded-lg flex items-center justify-center group-hover:bg-[#EF9202]/30 transition-all duration-300">
@@ -199,7 +199,7 @@ const Footer: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Lun-Sáb: 7:30-12:30 / 15:30-19:30</span>
+                <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Lun-Sáb: 8:00-12:30 / 16:30-20:30</span>
               </div>
             </div>
           </div>
