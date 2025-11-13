@@ -126,11 +126,14 @@ wp.yosoykarinamartin.com {
         path /wp-json/*
     }
     
-    respond @cors_preflight 200 {
-        Access-Control-Allow-Origin "*"
-        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
-        Access-Control-Allow-Headers "Authorization, Content-Type, X-WP-Nonce, Nonce, X-WC-Store-API-Nonce"
-        Access-Control-Max-Age "600"
+    handle @cors_preflight {
+        header {
+            Access-Control-Allow-Origin "*"
+            Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+            Access-Control-Allow-Headers "Authorization, Content-Type, X-WP-Nonce, Nonce, X-WC-Store-API-Nonce"
+            Access-Control-Max-Age "600"
+        }
+        respond 200
     }
     
     # Increase body size limit for file uploads (3GB)
