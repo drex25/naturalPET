@@ -102,16 +102,50 @@ yosoykarinamartin.com, www.yosoykarinamartin.com {
     }
 }
 
-# WordPress Backend - Subdominio wp.yosoykarinamartin.com
+# Configuración completa del bloque wp.yosoykarinamartin.com con CORS
 wp.yosoykarinamartin.com {
     tls admin@yosoykarinamartin.com
+    
+    # CORS Configuration - Solo para /wp-json/*
+    @cors_origin {
+        header Origin {http://localhost:8080 https://yosoykarinamartin.com https://www.yosoykarinamartin.com}
+    }
+    
+    @cors_path {
+        path /wp-json/*
+    }
+    
+    # Agregar headers CORS a las respuestas del API
+    header @cors_origin @cors_path {
+        Access-Control-Allow-Origin "{http.request.header.Origin}"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "Authorization, Content-Type, X-WP-Nonce, Nonce, X-WC-Store-API-Nonce"
+        Access-Control-Allow-Credentials "true"
+        Access-Control-Max-Age "600"
+        Vary "Origin"
+    }
+    
+    # Manejar preflight OPTIONS requests
+    @cors_preflight {
+        method OPTIONS
+        path /wp-json/*
+        header Origin {http://localhost:8080 https://yosoykarinamartin.com https://www.yosoykarinamartin.com}
+    }
+    
+    respond @cors_preflight 200 {
+        Access-Control-Allow-Origin "{http.request.header.Origin}"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "Authorization, Content-Type, X-WP-Nonce, Nonce, X-WC-Store-API-Nonce"
+        Access-Control-Allow-Credentials "true"
+        Access-Control-Max-Age "600"
+    }
     
     # Increase body size limit for file uploads (3GB)
     request_body {
         max_size 3072MB
     }
     
-    # Reverse proxy a WordPress (nombre del contenedor: wordpress-app)
+    # Reverse proxy a WordPress
     reverse_proxy wordpress-app:80 {
         header_up Host {host}
         header_up X-Real-IP {remote}
@@ -128,6 +162,7 @@ wp.yosoykarinamartin.com {
     }
     header @static Cache-Control "public, max-age=31536000"
     
+    # Security headers
     header {
         X-Content-Type-Options nosniff
         X-Frame-Options SAMEORIGIN
