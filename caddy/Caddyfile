@@ -60,3 +60,43 @@ dsabusiness.net, www.dsabusiness.net {
         Referrer-Policy "strict-origin-when-cross-origin"
     }
 }
+
+# Instituto de Transformación Personal - Proxy al puerto 8080
+# HTTP en puerto 8080 (redirige a HTTPS en 443)
+http://institutodetransformacionpersonal.com:8080, http://www.institutodetransformacionpersonal.com:8080 {
+    # Redirect todo a HTTPS sin www
+    redir https://institutodetransformacionpersonal.com{uri} permanent
+}
+
+institutodetransformacionpersonal.com, www.institutodetransformacionpersonal.com {
+    tls admin@institutodetransformacionpersonal.com
+    
+    # Redirect www to non-www
+    @www {
+        host www.institutodetransformacionpersonal.com
+    }
+    redir @www https://institutodetransformacionpersonal.com{uri} permanent
+    
+    # Reverse proxy al contenedor de la aplicación en puerto 8080
+    reverse_proxy institutodetransformacionpersonal:8080 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {scheme}
+    }
+    # Enable compression
+    encode gzip
+
+    # Cache static assets
+    @static {
+        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.ttf *.eot
+    }
+    header @static Cache-Control "public, max-age=31536000"
+    
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options SAMEORIGIN
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+}
