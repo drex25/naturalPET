@@ -144,6 +144,11 @@ wp.yosoykarinamartin.com {
         header_up X-Real-IP {remote}
         header_up X-Forwarded-For {remote}
         header_up X-Forwarded-Proto {scheme}
+        # Aumentar timeout para evitar errores 502
+        transport http {
+            dial_timeout 10s
+            response_header_timeout 60s
+        }
     }
     
     # Enable compression
@@ -163,3 +168,4 @@ wp.yosoykarinamartin.com {
         Referrer-Policy "strict-origin-when-cross-origin"
     }
 }
+
