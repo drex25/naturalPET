@@ -106,6 +106,33 @@ yosoykarinamartin.com, www.yosoykarinamartin.com {
 wp.yosoykarinamartin.com {
     tls admin@yosoykarinamartin.com
     
+    # CORS Configuration - Versión SIMPLE que funciona
+    # Agregar headers CORS a todas las respuestas de /wp-json/*
+    @cors_path {
+        path /wp-json/*
+    }
+    
+    # Headers CORS básicos (acepta cualquier origen válido)
+    header @cors_path {
+        Access-Control-Allow-Origin "*"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "Authorization, Content-Type, X-WP-Nonce, Nonce, X-WC-Store-API-Nonce"
+        Access-Control-Max-Age "600"
+    }
+    
+    # Manejar preflight OPTIONS
+    @cors_preflight {
+        method OPTIONS
+        path /wp-json/*
+    }
+    
+    respond @cors_preflight 200 {
+        Access-Control-Allow-Origin "*"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "Authorization, Content-Type, X-WP-Nonce, Nonce, X-WC-Store-API-Nonce"
+        Access-Control-Max-Age "600"
+    }
+    
     # Increase body size limit for file uploads (3GB)
     request_body {
         max_size 3072MB
@@ -136,4 +163,3 @@ wp.yosoykarinamartin.com {
         Referrer-Policy "strict-origin-when-cross-origin"
     }
 }
-
