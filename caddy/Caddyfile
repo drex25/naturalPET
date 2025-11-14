@@ -78,7 +78,7 @@ yosoykarinamartin.com, www.yosoykarinamartin.com {
     redir @www https://yosoykarinamartin.com{uri} permanent
     
     # Reverse proxy al contenedor de la aplicación React en puerto 8080
-    reverse_proxy karina-frontend:8080 {
+    reverse_proxy karina-frontend-app:8080 {
         header_up Host {host}
         header_up X-Real-IP {remote}
         header_up X-Forwarded-For {remote}
