@@ -61,46 +61,6 @@ dsabusiness.net, www.dsabusiness.net {
     }
 }
 
-# Yo Soy Karina Martin - Frontend React
-# HTTP en puerto 8080 (redirige a HTTPS en 443)
-http://yosoykarinamartin.com:8080, http://www.yosoykarinamartin.com:8080 {
-    # Redirect todo a HTTPS sin www
-    redir https://yosoykarinamartin.com{uri} permanent
-}
-
-yosoykarinamartin.com, www.yosoykarinamartin.com {
-    tls admin@yosoykarinamartin.com
-    
-    # Redirect www to non-www
-    @www {
-        host www.yosoykarinamartin.com
-    }
-    redir @www https://yosoykarinamartin.com{uri} permanent
-    
-    # Reverse proxy al contenedor de la aplicación React en puerto 8080
-    reverse_proxy karina-frontend-app:8080 {
-        header_up Host {host}
-        header_up X-Real-IP {remote}
-        header_up X-Forwarded-For {remote}
-        header_up X-Forwarded-Proto {scheme}
-    }
-    
-    # Enable compression
-    encode gzip
-
-    # Cache static assets
-    @static {
-        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.ttf *.eot
-    }
-    header @static Cache-Control "public, max-age=31536000"
-    
-    header {
-        X-Content-Type-Options nosniff
-        X-Frame-Options SAMEORIGIN
-        X-XSS-Protection "1; mode=block"
-        Referrer-Policy "strict-origin-when-cross-origin"
-    }
-}
 
 # GB Constructora - Frontend React (puerto 5173 via PM2)
 garcetebenitezconstructora.com.py, www.garcetebenitezconstructora.com.py {
@@ -162,47 +122,5 @@ api.garcetebenitezconstructora.com.py {
     }
 }
 
-# WordPress Backend - Subdominio wp.yosoykarinamartin.com
-wp.yosoykarinamartin.com {
-    tls admin@yosoykarinamartin.com
-    
-    # CORS se maneja en WordPress (MU plugin early-rest-cors.php)
-    # NO agregar headers CORS aquí para evitar duplicados
-    
-    # Increase body size limit for file uploads (3GB)
-    request_body {
-        max_size 3072MB
-    }
-    
-    # Reverse proxy a WordPress
-    reverse_proxy wordpress-app:80 {
-        header_up Host {host}
-        header_up X-Real-IP {remote}
-        header_up X-Forwarded-For {remote}
-        header_up X-Forwarded-Proto {scheme}
-        # Aumentar timeout para evitar errores 502
-        transport http {
-            dial_timeout 10s
-            response_header_timeout 60s
-        }
-    }
-    
-    # Enable compression
-    encode gzip
-    
-    # Cache static assets de WordPress
-    @static {
-        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.ttf *.eot
-    }
-    header @static Cache-Control "public, max-age=31536000"
-    
-    # Security headers
-    header {
-        X-Content-Type-Options nosniff
-        X-Frame-Options SAMEORIGIN
-        X-XSS-Protection "1; mode=block"
-        Referrer-Policy "strict-origin-when-cross-origin"
-    }
-}
 
 
