@@ -1,4 +1,9 @@
-version: '3.8'
+# ===========================================
+# DOCKER COMPOSE - NATURAL PET (naturalpet.com.ar)
+# ===========================================
+# Este compose se conecta al Caddy compartido en pos-backend_tupos_network
+# Ejecutar desde /root/naturalPET
+# docker compose up -d
 
 services:
   naturalpet:
@@ -8,23 +13,9 @@ services:
     expose:
       - "80"
     restart: unless-stopped
+    networks:
+      - pos-backend_tupos_network
 
-  caddy:
-    image: caddy:2-alpine
-    container_name: caddy
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    restart: unless-stopped
-    depends_on:
-      - naturalpet
-
-volumes:
-  caddy_data:
-    external: true
-  caddy_config:
+networks:
+  pos-backend_tupos_network:
     external: true
